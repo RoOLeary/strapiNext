@@ -5,3 +5,26 @@
 .grayscale {
   filter: grayscale(1);
 }
+
+@media (min-width: 640px) {
+  .mobileNav { display: none; }
+}
+
+.mobileNav{
+    left: -280px;
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    margin-top: 0px;
+    background-color: #000;
+    overflow-x: hidden;
+    transition: left 0.3s ease;
+  }
+.mobileNav.show{
+    left: 0; 
+}
+
+.body-modal-open{
+  overflow: hidden;
+}

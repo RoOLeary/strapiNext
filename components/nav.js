@@ -1,5 +1,13 @@
 import Link from 'next/link'
 import { useEffect, useState } from 'react';
+import { motion } from "framer-motion";
+import { useAppContext } from '../src/context/appcontext'
+import Modal from './modal';
+
+const variants = {
+  open: { opacity: 1, x: 0 },
+  closed: { opacity: 0, x: "-80%" },
+};
 
 let initialState = {
     logo: 'LOGO',
@@ -15,6 +23,14 @@ const Nav = () => {
         console.log(showNav)
     }
 
+    const ctx = useAppContext();
+    console.log(ctx[0]);
+
+    const toggleContact = event => {
+        event.preventDefault();
+        document.body.classList.toggle('body-modal-open');
+        ctx[0].handlers.setIsModalOpen(!ctx[0].state.isModalOpen);
+    }
 
     return(
         <nav className="bg-black">
@@ -34,7 +50,7 @@ const Nav = () => {
                 </svg>
                 </button>
             </div>
-            <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+            <div className="flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="hidden sm:block sm:ml-6">
                     <div className="flex space-x-4">
                         <Link href='/'>
@@ -44,12 +60,16 @@ const Nav = () => {
                             <a className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
                         </Link>
                         <Link href='/posts'>
-                        <a className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Blog</a>
+                            <a className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Blog</a>
                         </Link>
+                        <Link href='/work'>
+                            <a className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Work</a>
+                        </Link>
+                            <a onClick={toggleContact} className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
                     </div>
                 </div>
             </div>
-            <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+            {/* <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 <button className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                 <span className="sr-only">View notifications</span>
                 
@@ -73,23 +93,29 @@ const Nav = () => {
                     <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Sign out</a>
                 </div>
                 </div>
-            </div>
+            </div> */}
             </div>
         </div>
 
-        <div className={!showNav ? "hidden sm:hidden" : ""}>
+        <div className={`mobileNav ${!showNav ? '' : 'show' }`}>
             <div className="px-2 pt-2 pb-3 space-y-1">
-                <Link href='/'>
-                    <a className="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
-                </Link>
-                <Link href='/about'>
-                    <a className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About</a>
-                </Link>
-                <Link href='/posts'>
-                <a className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Blog</a>
-                </Link>
+                <motion.ul animate={showNav ? "open" : "closed"} variants={variants} exit={toggleNav}>
+                    <Link href='/'>
+                        <a className="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                    </Link>
+                    <Link href='/about'>
+                        <a className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About</a>
+                    </Link>
+                    <Link href='/posts'>
+                        <a className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Blog</a>
+                    </Link>
+                    <Link href='/work'>
+                        <a className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Work</a>
+                    </Link>
+                </motion.ul>
             </div>
         </div>
+        <Modal title={'Contact'} />
     </nav>
     ); 
 }; 

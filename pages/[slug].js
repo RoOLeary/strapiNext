@@ -15,7 +15,7 @@ import { getPageBySlug, getPage } from '@/lib/api';
 
 export default function Page({ postData }) {
     const router = useRouter(); 
-    const blocks = postData.pages[0].flex_content;
+    const blocks = postData.pages[0].flex_content ? postData.pages[0].flex_content : null;
 
     
 
@@ -29,16 +29,11 @@ export default function Page({ postData }) {
             </Head>
             <Intro title={postData.pages[0].title} />
             <main>
-                 <Link href={`/`}>
-                    <a>Home</a>
-                </Link>
-                 <h1>{postData.pages[0].title}</h1>
-                 <div dangerouslySetInnerHTML={{ __html:postData.pages[0].intro_text }} />
+                <div dangerouslySetInnerHTML={{ __html:postData.pages[0].intro_text }} />
                 <div className="container">
                     <h3>Blocks</h3>
                     {blocks ? blocks.map((block, i) => {
                         let fieldGroupNames = block.__typename;
-                        
                         let pageObject = {
                             ballsack_title: block['ballsack_title'],
                             ballsack_text: block['ballsack_text'],
@@ -50,10 +45,10 @@ export default function Page({ postData }) {
 
                         switch(fieldGroupNames) {
                             case 'ComponentGeneralBallsack':
-                                return <Ballsack key={fieldGroupNames} title={pageObject['ballsack_title']} text={pageObject['ballsack_text']}/>
+                                return <Ballsack key={i} title={pageObject['ballsack_title']} text={pageObject['ballsack_text']}/>
                                 break;
                             case 'ComponentGeneralContactInfo':
-                                return <Contact key={fieldGroupNames} address={pageObject['address']} telephone={pageObject['telephone']} email={pageObject['email']} />
+                                return <Contact key={i} address={pageObject['address']} telephone={pageObject['telephone']} email={pageObject['email']} />
                                 break;
                             default:
                                 // code block
