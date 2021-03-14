@@ -1,7 +1,23 @@
 import '@/styles/index.css'
+import { motion } from 'framer-motion';
+import { AppWrapper } from '../src/context/appcontext'; // import based on where you put it
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+
+function Application({ Component, pageProps, router }) {
+  return(
+    <motion.div key={router.route} initial="pageInitial" animate="pageAnimate" variants={{
+        pageInitial: {
+          opacity: 0
+        },
+        pageAnimate: {
+          opacity: 1
+        },
+      }}>
+      <AppWrapper>
+        <Component {...pageProps} />
+      </AppWrapper>
+    </motion.div>);
 }
 
-export default MyApp
+
+export default Application
