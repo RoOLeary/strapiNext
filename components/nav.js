@@ -16,16 +16,14 @@ let initialState = {
 
 
 const Nav = () => {
+    const ctx = useAppContext();
+    
     const [val, setVal] = useState(initialState.logo); 
     const [showNav, setShowNav] = useState(initialState.showNav);
     const toggleNav = (e) => {
         setShowNav(!showNav);
-        console.log(showNav)
     }
-
-    const ctx = useAppContext();
-    console.log(ctx[0]);
-
+    
     const toggleContact = event => {
         event.preventDefault();
         document.body.classList.toggle('body-modal-open');
