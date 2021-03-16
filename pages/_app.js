@@ -1,11 +1,12 @@
 import '@/styles/index.css'
 import { motion } from 'framer-motion';
 import { AppWrapper } from '../src/context/appcontext'; // import based on where you put it
-
+import { Provider } from 'next-auth/client'
 
 function Application({ Component, pageProps, router }) {
   return(
-    <motion.div key={router.route} initial="pageInitial" animate="pageAnimate" variants={{
+    <Provider session={pageProps.session}>
+      <motion.div key={router.route} initial="pageInitial" animate="pageAnimate" variants={{
         pageInitial: {
           opacity: 0
         },
@@ -16,7 +17,9 @@ function Application({ Component, pageProps, router }) {
       <AppWrapper>
         <Component {...pageProps} />
       </AppWrapper>
-    </motion.div>);
+    </motion.div>
+  </Provider>
+  );
 }
 
 

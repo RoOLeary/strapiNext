@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router'; 
+import { signIn, signOut, useSession } from 'next-auth/client'
 import dynamic from "next/dynamic";
 import Head from 'next/head';
 import Link from 'next/link';
@@ -16,8 +17,10 @@ import { getPageBySlug, getPage } from '@/lib/api';
 export default function Page({ postData }) {
     const router = useRouter(); 
     const blocks = postData.pages[0].flex_content ? postData.pages[0].flex_content : null;
-
+    const [ session, loading ] = useSession()
     
+
+    console.log(session);
 
     return(
         <Layout>
@@ -27,11 +30,22 @@ export default function Page({ postData }) {
                 <title>Technoise. {postData.pages[0].title}</title>
                 <link rel='icon' href='/favicon.ico' />
             </Head>
+            <div>
+                {!session && <div>
+                Not signed in <br/>
+                <button onClick={() => signIn()}>Sign in</button>
+                </div>}
+                {session && <div>
+                Signed in as {session.user.name} <br/>
+                <img src={session.user.image} />
+                <button onClick={() => signOut()}>Sign out</button>
+                </div>}
+            </div>
             <Intro title={postData.pages[0].title} />
             <main>
                 <div dangerouslySetInnerHTML={{ __html:postData.pages[0].intro_text }} />
                 <div className="container">
-                    <h3>Blocks</h3>
+                    <h3>{session ? 'Hey ' + session.user.name : ''} Blocks</h3>
                     {blocks ? blocks.map((block, i) => {
                         let fieldGroupNames = block.__typename;
                         let pageObject = {

@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router'
+import { signIn, signOut, useSession } from 'next-auth/client'
 import ErrorPage from 'next/error'
 import Container from '@/components/container'
 import PostBody from '@/components/post-body'
@@ -13,13 +14,17 @@ import Head from 'next/head'
 import { CMS_NAME } from '@/lib/constants'
 import markdownToHtml from '@/lib/markdownToHtml'
 
+
 export default function Post({ post, morePosts, preview }) {
   const router = useRouter()
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
   }
 
-  console.log(post);
+   const [ session, loading ] = useSession()
+    
+
+    console.log(session);
 
   return (
     <Layout preview={preview}>
