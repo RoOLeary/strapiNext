@@ -1,11 +1,11 @@
 import React, { useContext } from 'react'; 
 import { useAppContext } from '../src/context/appcontext'
 
-const Modal = ( props ) => {
+const Modal = () => {
     
     const ctx = useAppContext();
-    let {item} = props;
     let show = ctx[0].state.isModalOpen;
+    let { title, content } = ctx[0].state.modalData;
     
     let protoModal = {
         background: "white",
@@ -34,7 +34,8 @@ const Modal = ( props ) => {
     return(
         <div className="bg-black bg-opacity-75 fixed top-0 left-0 w-full h-full z-50 flex items-center justify-start p-4" style={modalBackground}>
             <div className="protoModal" style={protoModal}>
-                <h2 style={{ fontSize: "4em" }}>Don't {props ? props.title : 'STUFF JUST FOR NOW'}</h2>
+                <h2 style={{ fontSize: "4em" }}>{title ? title : 'STUFF JUST FOR NOW'}</h2>
+                <p>{content ? content : ''}</p>
                 <a onClick={() => closeModal()}>Close</a>   
             </div>
         </div>

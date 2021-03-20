@@ -1,3 +1,4 @@
+import { useEffect, useCallback, useRef, useState } from 'react';
 import { useRouter } from 'next/router'; 
 import { signIn, signOut, useSession } from 'next-auth/client'
 import dynamic from "next/dynamic";
@@ -16,11 +17,29 @@ import { getPageBySlug, getPage } from '@/lib/api';
 
 export default function Page({ postData }) {
     const router = useRouter(); 
+    const titleRef = useRef(); 
+    const ballsRef = useRef(); 
     const blocks = postData.pages[0].flex_content ? postData.pages[0].flex_content : null;
     const [ session, loading ] = useSession()
+    const [ flerdle, setFlerdle] = useState(); 
     
+    useEffect(() => {
+        setGeo();        
+    },[])
+ 
+    const setGeo = useCallback(() => {
+        setTimeout(() => {
+        setFlerdle(ballsRef.current.innerHTML);
+        }, 2000);
+    }, []);
 
-    console.log(session);
+
+    useEffect(function () {
+        setTimeout(() => {
+            titleRef.current.textContent = postData.pages[0].title
+        }, 2000); // Update the content of the element after 2seconds 
+    }, []);
+
 
     return(
         <Layout>
@@ -31,13 +50,15 @@ export default function Page({ postData }) {
                 <link rel='icon' href='/favicon.ico' />
             </Head>
             <div>
+                <h1>{flerdle ? flerdle : 'NYARF' }</h1>
                 {session && <div>
-                Signed in as {session.user.name} <br/>
+                Signed in as {session.user.name} - {session.id}<br/>
                 <img src={session.user.image} />
                 <button onClick={() => signOut()}>Sign out</button>
                 </div>}
             </div>
             <Intro title={postData.pages[0].title} />
+            <div className="title" ref={titleRef}>Original title</div>
             <main>
                 <div dangerouslySetInnerHTML={{ __html:postData.pages[0].intro_text }} />
                 <div className="container">
@@ -65,6 +86,7 @@ export default function Page({ postData }) {
                             }
                     }) : 'LOADING'}
                 </div>
+                <div ref={ballsRef}>My Balls</div>
                 <Link href={`/posts`}>
                     <a>Back to Posts Index</a>
                 </Link>
@@ -79,7 +101,7 @@ export async function getStaticPaths(){
     const allPages = await getPageBySlug(); 
 
     return { 
-        paths: allPages?.map((page) => `/${page.slug}`) || [],
+        paths: allPages.map((page) => `/${page.slug}`) || [],
         fallback: true
     }
 }

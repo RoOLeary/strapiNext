@@ -5,23 +5,24 @@ const AppContext = createContext();
 export function AppWrapper({ children }) {
   let sharedState = {
       boobs: 'awesome',
-      website: '#'
+      website: '#',
+      modalData: []
   }
   
   const [ isModalOpen, setIsModalOpen ] = useState(false);
-  const [ showModalContent, setShowModalContent ] = useState({});
+  const [ modalData, setModalData ] = useState({});
   const [boobs, setBoobs] = useState(sharedState.boobs); 
    
     let state = {
         boobs,
         isModalOpen,
-        showModalContent
+        modalData
     };
 
     let handlers = {
         setBoobs,
         setIsModalOpen,
-        setShowModalContent
+        setModalData
     }; 
 
     const provider = [{state, handlers}]

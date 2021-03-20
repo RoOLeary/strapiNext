@@ -1,11 +1,24 @@
 import Container from './container'
 import { EXAMPLE_PATH } from '@/lib/constants'
 import { useAppContext } from '../src/context/appcontext'
+import { useRef } from 'react'
+import Modal from './modal';
 
 export default function Footer() {
 
-  const floodle = useAppContext();
+  const ctx = useAppContext();
 
+  console.log(ctx[0].state.modalData.title);
+
+  const toggleFooterModal = event => {
+      event.preventDefault();
+      ctx[0].handlers.setModalData({
+        title: 'footer',
+        content: '...my life got flipped, turned upside down...'
+      })
+      document.body.classList.toggle('body-modal-open');
+      ctx[0].handlers.setIsModalOpen(!ctx[0].state.isModalOpen);
+  }
 
   return (
     <footer className="bg-accent-1 border-t border-accent-2">
@@ -22,14 +35,16 @@ export default function Footer() {
               Read Documentation
             </a>
             <a
-              href={`https://github.com/vercel/next.js/tree/canary/examples/${EXAMPLE_PATH}`}
+              onClick={toggleFooterModal}
               className="mx-3 font-bold hover:underline"
             >
-              View on {floodle.website}
+              View on {ctx.website}
             </a>
           </div>
         </div>
+        
       </Container>
+      <Modal title="Footer" />
     </footer>
   )
 }

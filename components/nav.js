@@ -27,6 +27,10 @@ const Nav = () => {
     
     const toggleContact = event => {
         event.preventDefault();
+        ctx[0].handlers.setModalData({
+            title: 'Contact', 
+            content: 'now this is a story, all about how....'
+        })
         document.body.classList.toggle('body-modal-open');
         ctx[0].handlers.setIsModalOpen(!ctx[0].state.isModalOpen);
     }
@@ -123,7 +127,7 @@ const Nav = () => {
                 </motion.ul>
             </div>
         </div>
-        <Modal title={'Contact'} />
+        <Modal title='Contact' />
     </nav>
     ); 
 }; 

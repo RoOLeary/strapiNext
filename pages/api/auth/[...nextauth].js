@@ -10,40 +10,37 @@ const options = {
     Providers.Google({
       clientId: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      authorizationUrl:
+        'https://accounts.google.com/o/oauth2/v2/auth?prompt=consent&access_type=offline&response_type=code',
+      scope:
+        'https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email',
     }),
-    // Providers.Credentials({
-    //   name: 'Credentials',
-    //   credentials: {
-    //     password: { label: 'Password', type: 'password' }
-    //   },
-    //   async authorize (credentials) {
-    //     if (credentials.password === 'password') {
-    //       return {
-    //         id: 1,
-    //         name: 'Fill Murray',
-    //         email: 'bill@fillmurray.com',
-    //         image: 'https://www.fillmurray.com/64/64'
-    //       }
-    //     }
-    //   }
-    // })
   ],
   database: process.env.NEXT_PUBLIC_DATABASE_URL,
   session: {
     jwt: true,
   },
   debug: true,
+  secret: process.env.SECRET,
   callbacks: {
-    session: async (session, user) => {
+    session: async (session, user, account) => {
+      console.log('poon');
       session.jwt = user.jwt;
       session.id = user.id;
-
+      session.accessToken = session.jwt;
+      // session.check = account.provider;
       return Promise.resolve(session);
     },
-    jwt: async (token, user, account) => {
+    jwt: async (token, user, account, profile, isNewUser) => {
+      // if (account.accessToken) {
+      //   token.accessToken = account.accessToken
+      // }
+      // return token
       const isSignIn = user ? true : false;
 
       if (isSignIn) {
+        const { accessToken, refreshToken } = account
+        
         const response = await fetch(
           `${process.env.NEXT_PUBLIC_API_URL}/auth/${account.provider}/callback?access_token=${account.accessToken}`
         );
@@ -51,8 +48,8 @@ const options = {
         const data = await response.json();
         
         token.jwt = data.jwt;
-        
-        console.log(token.id);
+        token.accessToken = account.accessToken;
+
         if(data.user.id){
           token.id = data.user.id;
         } else {
@@ -62,6 +59,7 @@ const options = {
 
       return Promise.resolve(token);
     },
+    encryption: true,
   },
 };
 
