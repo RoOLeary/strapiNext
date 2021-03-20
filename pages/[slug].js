@@ -31,10 +31,6 @@ export default function Page({ postData }) {
                 <link rel='icon' href='/favicon.ico' />
             </Head>
             <div>
-                {!session && <div>
-                Not signed in <br/>
-                <button onClick={() => signIn()}>Sign in</button>
-                </div>}
                 {session && <div>
                 Signed in as {session.user.name} <br/>
                 <img src={session.user.image} />

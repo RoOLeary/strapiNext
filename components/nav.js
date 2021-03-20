@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { useEffect, useState } from 'react';
 import { motion } from "framer-motion";
+import { signIn, signOut, useSession } from 'next-auth/client'
 import { useAppContext } from '../src/context/appcontext'
 import Modal from './modal';
 
@@ -17,7 +18,7 @@ let initialState = {
 
 const Nav = () => {
     const ctx = useAppContext();
-    
+    const [session, setSession] = useSession();
     const [val, setVal] = useState(initialState.logo); 
     const [showNav, setShowNav] = useState(initialState.showNav);
     const toggleNav = (e) => {
@@ -64,6 +65,15 @@ const Nav = () => {
                             <a className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Work</a>
                         </Link>
                             <a onClick={toggleContact} className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                    
+                    
+                        <Link href='/'>
+                        {!session ?
+                            <a className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" onClick={() => signIn()}>Sign In</a>
+                        :
+                            <a className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" onClick={() => signOut()}>Sign Out</a>
+                        }
+                        </Link>       
                     </div>
                 </div>
             </div>
