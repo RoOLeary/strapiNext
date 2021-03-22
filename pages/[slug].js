@@ -51,7 +51,7 @@ export default function Page({ postData }) {
              <Container>
         <div>
             <Head>
-                <title>Technoise. {postData.pages[0].title}</title>
+                  <title>Technoise. {postData.pages[0].title}</title>  
                 <link rel='icon' href='/favicon.ico' />
             </Head>
             <div>
@@ -65,7 +65,7 @@ export default function Page({ postData }) {
              
             <div className="title" ref={titleRef}>Original title</div>
             <main>
-                 <div dangerouslySetInnerHTML={{ __html:postData.pages[0].intro_text }} /> 
+                  <div dangerouslySetInnerHTML={{ __html:postData.pages[0].intro_text }} /> 
                  <div className="container">
                      {blocks ? blocks.map((block, i) => {
                         let fieldGroupNames = block.__typename;
@@ -96,7 +96,7 @@ export default function Page({ postData }) {
                                 // code block
                             }
                     }) : 'LOADING'} 
-                </div> 
+                </div>  
                 <div ref={ballsRef}>Schmlort</div>
                 <Link href={`/posts`}>
                     <a>Back to Posts Index</a>
@@ -108,23 +108,12 @@ export default function Page({ postData }) {
     );
 }
 
-
-
-export async function getStaticPaths(){
-    const allPages = await getAllPagesBySlug(); 
-    console.log(allPages);
-    return { 
-        paths: [],
-        fallback: true
-    }
-}
-
-export async function getStaticProps({ params }){
-   
+export async function getServerSideProps({ params }) {
+    
     const data = await getPageBySlug(params.slug); 
-
-    return{
-        props: {
+    console.log(data);
+    return {
+         props: {
             postData: data
         }
     }
