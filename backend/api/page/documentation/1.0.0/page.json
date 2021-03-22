@@ -541,7 +541,9 @@
                       "type": "string",
                       "enum": [
                         "general.ballsack",
-                        "general.contact-info"
+                        "general.contact-info",
+                        "general.accordion",
+                        "general.tabs"
                       ]
                     },
                     "id": {
@@ -564,7 +566,9 @@
                       "type": "string",
                       "enum": [
                         "general.ballsack",
-                        "general.contact-info"
+                        "general.contact-info",
+                        "general.accordion",
+                        "general.tabs"
                       ]
                     },
                     "id": {
@@ -578,6 +582,84 @@
                     },
                     "email": {
                       "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "general.ballsack",
+                        "general.contact-info",
+                        "general.accordion",
+                        "general.tabs"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "accordion": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "id"
+                        ],
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "title": {
+                            "type": "string"
+                          },
+                          "content": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "general.ballsack",
+                        "general.contact-info",
+                        "general.accordion",
+                        "general.tabs"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "tabunit": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "id"
+                        ],
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "tab_title": {
+                            "type": "string"
+                          },
+                          "tab_content": {
+                            "type": "string"
+                          }
+                        }
+                      }
                     }
                   },
                   "required": [
@@ -698,7 +780,9 @@
                       "type": "string",
                       "enum": [
                         "general.ballsack",
-                        "general.contact-info"
+                        "general.contact-info",
+                        "general.accordion",
+                        "general.tabs"
                       ]
                     },
                     "id": {
@@ -721,7 +805,9 @@
                       "type": "string",
                       "enum": [
                         "general.ballsack",
-                        "general.contact-info"
+                        "general.contact-info",
+                        "general.accordion",
+                        "general.tabs"
                       ]
                     },
                     "id": {
@@ -735,6 +821,84 @@
                     },
                     "email": {
                       "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "general.ballsack",
+                        "general.contact-info",
+                        "general.accordion",
+                        "general.tabs"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "accordion": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "id"
+                        ],
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "title": {
+                            "type": "string"
+                          },
+                          "content": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "general.ballsack",
+                        "general.contact-info",
+                        "general.accordion",
+                        "general.tabs"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "tabunit": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "id"
+                        ],
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "tab_title": {
+                            "type": "string"
+                          },
+                          "tab_content": {
+                            "type": "string"
+                          }
+                        }
+                      }
                     }
                   },
                   "required": [

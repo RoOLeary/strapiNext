@@ -1,5 +1,5 @@
-export default function Contact({ address, email, telephone }) {
-    
+export default function Contact({ data }) {
+    const { address, email, telephone } = data;
     return(
         <div>
             <h1 style={{ fontSize: '24px'}}>{address}</h1>

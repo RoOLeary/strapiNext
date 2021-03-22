@@ -7,9 +7,7 @@ import Modal from './modal';
 export default function Footer() {
 
   const ctx = useAppContext();
-
-  console.log(ctx[0].state.modalData.title);
-
+  
   const toggleFooterModal = event => {
       event.preventDefault();
       ctx[0].handlers.setModalData({
@@ -44,7 +42,6 @@ export default function Footer() {
         </div>
         
       </Container>
-      <Modal title="Footer" />
     </footer>
   )
 }

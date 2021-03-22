@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_general_tab_units",
+  "info": {
+    "name": "TabUnit",
+    "icon": "address-card"
+  },
+  "options": {},
+  "attributes": {
+    "tab_title": {
+      "type": "string"
+    },
+    "tab_content": {
+      "type": "richtext"
+    }
+  }
+}

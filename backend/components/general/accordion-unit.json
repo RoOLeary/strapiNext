@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_general_accordion_units",
+  "info": {
+    "name": "Accordion Unit",
+    "icon": "angle-up"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    }
+  }
+}

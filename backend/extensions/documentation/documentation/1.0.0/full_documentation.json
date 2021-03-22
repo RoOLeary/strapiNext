@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "03/20/2021 6:38:07 PM"
+    "x-generation-date": "03/21/2021 3:59:21 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -4616,7 +4616,9 @@
                       "type": "string",
                       "enum": [
                         "general.ballsack",
-                        "general.contact-info"
+                        "general.contact-info",
+                        "general.accordion",
+                        "general.tabs"
                       ]
                     },
                     "id": {
@@ -4639,7 +4641,9 @@
                       "type": "string",
                       "enum": [
                         "general.ballsack",
-                        "general.contact-info"
+                        "general.contact-info",
+                        "general.accordion",
+                        "general.tabs"
                       ]
                     },
                     "id": {
@@ -4653,6 +4657,84 @@
                     },
                     "email": {
                       "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "general.ballsack",
+                        "general.contact-info",
+                        "general.accordion",
+                        "general.tabs"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "accordion": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "id"
+                        ],
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "title": {
+                            "type": "string"
+                          },
+                          "content": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "general.ballsack",
+                        "general.contact-info",
+                        "general.accordion",
+                        "general.tabs"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "tabunit": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "id"
+                        ],
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "tab_title": {
+                            "type": "string"
+                          },
+                          "tab_content": {
+                            "type": "string"
+                          }
+                        }
+                      }
                     }
                   },
                   "required": [
@@ -4773,7 +4855,9 @@
                       "type": "string",
                       "enum": [
                         "general.ballsack",
-                        "general.contact-info"
+                        "general.contact-info",
+                        "general.accordion",
+                        "general.tabs"
                       ]
                     },
                     "id": {
@@ -4796,7 +4880,9 @@
                       "type": "string",
                       "enum": [
                         "general.ballsack",
-                        "general.contact-info"
+                        "general.contact-info",
+                        "general.accordion",
+                        "general.tabs"
                       ]
                     },
                     "id": {
@@ -4810,6 +4896,84 @@
                     },
                     "email": {
                       "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "general.ballsack",
+                        "general.contact-info",
+                        "general.accordion",
+                        "general.tabs"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "accordion": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "id"
+                        ],
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "title": {
+                            "type": "string"
+                          },
+                          "content": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "general.ballsack",
+                        "general.contact-info",
+                        "general.accordion",
+                        "general.tabs"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "tabunit": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "id"
+                        ],
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "tab_title": {
+                            "type": "string"
+                          },
+                          "tab_content": {
+                            "type": "string"
+                          }
+                        }
+                      }
                     }
                   },
                   "required": [

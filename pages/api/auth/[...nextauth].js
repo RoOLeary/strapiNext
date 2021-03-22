@@ -24,7 +24,6 @@ const options = {
   secret: process.env.SECRET,
   callbacks: {
     session: async (session, user, account) => {
-      console.log('poon');
       session.jwt = user.jwt;
       session.id = user.id;
       session.accessToken = session.jwt;

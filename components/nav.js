@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import { motion } from "framer-motion";
 import { signIn, signOut, useSession } from 'next-auth/client'
 import { useAppContext } from '../src/context/appcontext'
-import Modal from './modal';
 
 const variants = {
   open: { opacity: 1, x: 0 },
@@ -29,7 +28,7 @@ const Nav = () => {
         event.preventDefault();
         ctx[0].handlers.setModalData({
             title: 'Contact', 
-            content: 'now this is a story, all about how....'
+            content: 'Now this is a story, all about how....'
         })
         document.body.classList.toggle('body-modal-open');
         ctx[0].handlers.setIsModalOpen(!ctx[0].state.isModalOpen);
@@ -127,7 +126,6 @@ const Nav = () => {
                 </motion.ul>
             </div>
         </div>
-        <Modal title='Contact' />
     </nav>
     ); 
 }; 

@@ -21,11 +21,8 @@ export default function Post({ post, morePosts, preview }) {
     return <ErrorPage statusCode={404} />
   }
 
-   const [ session, loading ] = useSession()
+  const [ session, loading ] = useSession()
     
-
-    console.log(session);
-
   return (
     <Layout preview={preview}>
       <Container>

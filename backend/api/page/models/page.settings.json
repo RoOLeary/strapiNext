@@ -23,7 +23,9 @@
       "type": "dynamiczone",
       "components": [
         "general.ballsack",
-        "general.contact-info"
+        "general.contact-info",
+        "general.accordion",
+        "general.tabs"
       ]
     }
   }

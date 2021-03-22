@@ -11,7 +11,7 @@ export function AppWrapper({ children }) {
   
   const [ isModalOpen, setIsModalOpen ] = useState(false);
   const [ modalData, setModalData ] = useState({});
-  const [boobs, setBoobs] = useState(sharedState.boobs); 
+  const [ boobs, setBoobs ] = useState(sharedState.boobs); 
    
     let state = {
         boobs,

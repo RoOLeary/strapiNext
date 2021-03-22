@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_general_tabs",
+  "info": {
+    "name": "Tabs",
+    "icon": "boxes"
+  },
+  "options": {},
+  "attributes": {
+    "tabunit": {
+      "type": "component",
+      "repeatable": true,
+      "component": "general.tab-unit"
+    }
+  }
+}

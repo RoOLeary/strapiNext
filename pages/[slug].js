@@ -9,13 +9,18 @@ import Ballsack from '@/components/ballsack'
 import Contact from '@/components/contact'
 import Container from '@/components/container'
 import Intro from '@/components/intro'
+import AccordionUnit from '@/components/accordion'
+import Tabs from '@/components/tabs'
 
 // data
-import { getPageBySlug, getPage } from '@/lib/api';
+import { getAllPagesBySlug, getPageBySlug } from '@/lib/api';
 
 // styles
 
 export default function Page({ postData }) {
+
+    console.log(postData);
+
     const router = useRouter(); 
     const titleRef = useRef(); 
     const ballsRef = useRef(); 
@@ -40,7 +45,7 @@ export default function Page({ postData }) {
         }, 2000); // Update the content of the element after 2seconds 
     }, []);
 
-
+   
     return(
         <Layout>
              <Container>
@@ -57,13 +62,12 @@ export default function Page({ postData }) {
                 <button onClick={() => signOut()}>Sign out</button>
                 </div>}
             </div>
-            <Intro title={postData.pages[0].title} />
+             
             <div className="title" ref={titleRef}>Original title</div>
             <main>
-                <div dangerouslySetInnerHTML={{ __html:postData.pages[0].intro_text }} />
-                <div className="container">
-                    <h3>{session ? 'Hey ' + session.user.name : ''} Blocks</h3>
-                    {blocks ? blocks.map((block, i) => {
+                 <div dangerouslySetInnerHTML={{ __html:postData.pages[0].intro_text }} /> 
+                 <div className="container">
+                     {blocks ? blocks.map((block, i) => {
                         let fieldGroupNames = block.__typename;
                         let pageObject = {
                             ballsack_title: block['ballsack_title'],
@@ -71,22 +75,29 @@ export default function Page({ postData }) {
                             address: block['address'],
                             telephone: block['telephone'],
                             email: block['email'],
+                            accordion: block['accordion'],
+                            tabs: block['tabunit']
                         }
-                        {/* console.log(pageObject['ballsack_text']); */}
-
+                         
                         switch(fieldGroupNames) {
                             case 'ComponentGeneralBallsack':
-                                return <Ballsack key={i} title={pageObject['ballsack_title']} text={pageObject['ballsack_text']}/>
+                                return <Ballsack key={i} data={pageObject} />
                                 break;
                             case 'ComponentGeneralContactInfo':
-                                return <Contact key={i} address={pageObject['address']} telephone={pageObject['telephone']} email={pageObject['email']} />
+                                return <Contact key={i} data={pageObject} />
+                                break;
+                            case 'ComponentGeneralAccordion':
+                                return <AccordionUnit key={i} data={pageObject} />
+                                break;
+                            case 'ComponentGeneralTabs':
+                                return <Tabs key={i} data={pageObject} />
                                 break;
                             default:
                                 // code block
                             }
-                    }) : 'LOADING'}
-                </div>
-                <div ref={ballsRef}>My Balls</div>
+                    }) : 'LOADING'} 
+                </div> 
+                <div ref={ballsRef}>Schmlort</div>
                 <Link href={`/posts`}>
                     <a>Back to Posts Index</a>
                 </Link>
@@ -97,18 +108,21 @@ export default function Page({ postData }) {
     );
 }
 
-export async function getStaticPaths(){
-    const allPages = await getPageBySlug(); 
 
+
+export async function getStaticPaths(){
+    const allPages = await getAllPagesBySlug(); 
+    console.log(allPages);
     return { 
-        paths: allPages.map((page) => `/${page.slug}`) || [],
+        paths: [],
         fallback: true
     }
 }
 
 export async function getStaticProps({ params }){
-    const data = await getPage(params.slug); 
-    // console.log(data);
+   
+    const data = await getPageBySlug(params.slug); 
+
     return{
         props: {
             postData: data

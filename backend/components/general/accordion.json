@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_general_accordions",
+  "info": {
+    "name": "Accordion",
+    "icon": "arrows-alt-v"
+  },
+  "options": {},
+  "attributes": {
+    "accordion": {
+      "type": "component",
+      "repeatable": true,
+      "component": "general.accordion-unit"
+    }
+  }
+}
