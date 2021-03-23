@@ -18,33 +18,9 @@ import { getAllPagesBySlug, getPageBySlug } from '@/lib/api';
 // styles
 
 export default function Page({ postData }) {
-
-    console.log(postData);
-
     const router = useRouter(); 
-    const titleRef = useRef(); 
-    const ballsRef = useRef(); 
-    const blocks = postData.pages[0].flex_content ? postData.pages[0].flex_content : null;
+    const blocks = postData.pages[0].flex_content ? postData.pages[0].flex_content : [];
     const [ session, loading ] = useSession()
-    const [ flerdle, setFlerdle] = useState(); 
-    
-    useEffect(() => {
-        setGeo();        
-    },[])
- 
-    const setGeo = useCallback(() => {
-        setTimeout(() => {
-        setFlerdle(ballsRef.current.innerHTML);
-        }, 2000);
-    }, []);
-
-
-    useEffect(function () {
-        setTimeout(() => {
-            titleRef.current.textContent = postData.pages[0].title
-        }, 2000); // Update the content of the element after 2seconds 
-    }, []);
-
    
     return(
         <Layout>
@@ -55,7 +31,7 @@ export default function Page({ postData }) {
                 <link rel='icon' href='/favicon.ico' />
             </Head>
             <div>
-                <h1>{flerdle ? flerdle : 'NYARF' }</h1>
+                
                 {session && <div>
                 Signed in as {session.user.name} - {session.id}<br/>
                 <img src={session.user.image} />
@@ -63,9 +39,9 @@ export default function Page({ postData }) {
                 </div>}
             </div>
              
-            <div className="title" ref={titleRef}>Original title</div>
+            <div className="title">{postData.pages[0].title}</div>
             <main>
-                  <div dangerouslySetInnerHTML={{ __html:postData.pages[0].intro_text }} /> 
+                <div dangerouslySetInnerHTML={{ __html:postData.pages[0].intro_text }} /> 
                  <div className="container">
                      {blocks ? blocks.map((block, i) => {
                         let fieldGroupNames = block.__typename;
@@ -97,7 +73,7 @@ export default function Page({ postData }) {
                             }
                     }) : 'LOADING'} 
                 </div>  
-                <div ref={ballsRef}>Schmlort</div>
+                
                 <Link href={`/posts`}>
                     <a>Back to Posts Index</a>
                 </Link>
@@ -111,7 +87,7 @@ export default function Page({ postData }) {
 export async function getServerSideProps({ params }) {
     
     const data = await getPageBySlug(params.slug); 
-    console.log(data);
+    // console.log(data);
     return {
          props: {
             postData: data
