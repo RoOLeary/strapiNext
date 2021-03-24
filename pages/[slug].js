@@ -13,13 +13,19 @@ import AccordionUnit from '@/components/accordion'
 import Tabs from '@/components/tabs'
 
 // data
-import { getAllPagesBySlug, getPageBySlug } from '@/lib/api';
+import { getAllPagesWithSlug, getPageBySlug } from '@/lib/api';
 
 // styles
 
 export default function Page({ postData }) {
+    
+    console.log(postData);
+    
+    
     const router = useRouter(); 
-    const blocks = postData.pages[0].flex_content ? postData.pages[0].flex_content : [];
+    const blocks = postData ? postData.pages[0].flex_content : null;
+    const title = postData ? postData.pages[0].title : 'Loading'
+    const intro_text = postData ? postData.pages[0].intro_text : 'Loading';
     const [ session, loading ] = useSession()
    
     return(
@@ -27,7 +33,7 @@ export default function Page({ postData }) {
              <Container>
         <div>
             <Head>
-                  <title>Technoise. {postData.pages[0].title}</title>  
+                <title>Technoise. {title}</title>  
                 <link rel='icon' href='/favicon.ico' />
             </Head>
             <div>
@@ -39,9 +45,9 @@ export default function Page({ postData }) {
                 </div>}
             </div>
              
-            <div className="title">{postData.pages[0].title}</div>
+            <div className="title">{title}</div>
             <main>
-                <div dangerouslySetInnerHTML={{ __html:postData.pages[0].intro_text }} /> 
+                <div dangerouslySetInnerHTML={{ __html:intro_text }} /> 
                  <div className="container">
                      {blocks ? blocks.map((block, i) => {
                         let fieldGroupNames = block.__typename;
@@ -72,7 +78,7 @@ export default function Page({ postData }) {
                                 // code block
                             }
                     }) : 'LOADING'} 
-                </div>  
+                </div> 
                 
                 <Link href={`/posts`}>
                     <a>Back to Posts Index</a>
@@ -84,13 +90,21 @@ export default function Page({ postData }) {
     );
 }
 
-export async function getServerSideProps({ params }) {
-    
-    const data = await getPageBySlug(params.slug); 
-    // console.log(data);
+export async function getStaticProps({ params }) {
+    const data = await getPageBySlug(params.slug)
+  
     return {
-         props: {
-            postData: data
-        }
+      props: {
+        postData: data
+      }
     }
 }
+  
+export async function getStaticPaths() {
+    const allPages = await getAllPagesWithSlug()
+    return {
+      paths: allPages?.map((page) => `/${slug}`) || [],
+      fallback: true,
+    }
+}
+  
