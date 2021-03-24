@@ -23,39 +23,23 @@ const options = {
   debug: true,
   secret: process.env.SECRET,
   callbacks: {
-    session: async (session, user, account) => {
+    session: async (session, user) => {
       session.jwt = user.jwt;
       session.id = user.id;
       session.accessToken = session.jwt;
-      // session.check = account.provider;
+      //session.check = account.provider;
       return Promise.resolve(session);
     },
-    jwt: async (token, user, account, profile, isNewUser) => {
-      // if (account.accessToken) {
-      //   token.accessToken = account.accessToken
-      // }
-      // return token
+    jwt: async (token, user, account) => {
       const isSignIn = user ? true : false;
-
       if (isSignIn) {
-        const { accessToken, refreshToken } = account
-        
         const response = await fetch(
-          `${process.env.NEXT_PUBLIC_API_URL}/auth/${account.provider}/callback?access_token=${account.accessToken}`
+          `${process.env.NEXT_PUBLIC_API_URL}/auth/${account.provider}/callback?access_token=${account?.accessToken}`
         );
-
         const data = await response.json();
-        
         token.jwt = data.jwt;
-        token.accessToken = account.accessToken;
-
-        if(data.user.id){
-          token.id = data.user.id;
-        } else {
-          token.id = data.id;
-        }
+        token.id = data.user.id;
       }
-
       return Promise.resolve(token);
     },
     encryption: true,
