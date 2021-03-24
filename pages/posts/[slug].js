@@ -15,7 +15,7 @@ import { CMS_NAME } from '@/lib/constants'
 import markdownToHtml from '@/lib/markdownToHtml'
 
 
-export default function Post({ post, morePosts, preview }) {
+export default function Post({ post, morePosts }) {
   const router = useRouter()
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
@@ -24,7 +24,7 @@ export default function Post({ post, morePosts, preview }) {
   const [ session, loading ] = useSession()
     
   return (
-    <Layout preview={preview}>
+    <Layout>
       <Container>
         <Header />
         {router.isFallback ? (
@@ -56,13 +56,12 @@ export default function Post({ post, morePosts, preview }) {
   )
 }
 
-export async function getStaticProps({ params, preview }) {
-  const data = await getPostAndMorePosts(params.slug, preview)
+export async function getStaticProps({ params }) {
+  const data = await getPostAndMorePosts(params.slug)
   const content = await markdownToHtml(data?.posts[0]?.content || '')
 
   return {
     props: {
-      preview: preview,
       post: {
         ...data?.posts[0],
         content,
@@ -75,7 +74,7 @@ export async function getStaticProps({ params, preview }) {
 export async function getStaticPaths() {
   const allPosts = await getAllPostsWithSlug()
   return {
-    paths: allPosts?.map((post) => `/posts/${post.slug}`) || [],
+    paths: allPosts?.map((post) => `/posts/${slug}`) || [],
     fallback: true,
   }
 }
