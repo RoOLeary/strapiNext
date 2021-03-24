@@ -9,9 +9,6 @@ export default function Index({ homePageData }) {
 
   const { Title, HomePageContent } = homePageData.home;
   
-  console.log(Title);
-
-
   return (
     <>
       <Layout>
