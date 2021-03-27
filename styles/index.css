@@ -215,7 +215,7 @@
 	-webkit-align-items: center;
 	-moz-align-items: center;
 	-ms-align-items: center;
-	width: 65%;
+	width: 75%;
 	transform-origin: left bottom;
 	transition: transform 0.1s linear 0.4s;
 	opacity: 0;
@@ -224,7 +224,7 @@
 }
 
 .flex__item--right {
-	width: 35%;
+	width: 25%;
 	transform-origin: right center;
 	transition: transform 0.1s linear 0s;
 	opacity: 0;
@@ -241,6 +241,7 @@
 
 .flex--piplup .flex__item--left {
 	background: #3e9fe6;
+	transition: all 0.1s linear 0s;
 }
 
 .flex--piplup .flex__item--right {
@@ -297,12 +298,12 @@
 
 .pokemon__img {
 	position: absolute;
-	bottom: 20px;
+	bottom: 25px;
 	right: 15%;
-	max-height: 40vw;
+	max-height: 50vw;
 	opacity: 1;
 	transform: translate3d(0,0,0);
-	transition: opacity 0.43s 0.6s, transform 0.4s 0.65s cubic-bezier(0, 0.88, 0.4, 0.93);
+	transition: opacity 0.43s 0.6s, transform 0.45s 0.65s cubic-bezier(0, 0.88, 0.45, 0.93);
 }
 
 /* Animate-START point */
