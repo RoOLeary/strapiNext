@@ -18,12 +18,11 @@ export default function Index({ homePageData }) {
         </Head>
         <Container>
           <Intro title="Ro Quarters"/>
-          <div>
-            <h1>{Title}</h1>
-            <p>{HomePageContent ? HomePageContent : 'Failed to load' }</p>
-          </div>
+          
+          <h1>{Title}</h1>
+          <p>{HomePageContent ? HomePageContent : 'Failed to load' }</p>
+          <Slider />
         </Container>
-        <Slider />
       </Layout>
     </>
   )
