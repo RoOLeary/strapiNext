@@ -11,6 +11,7 @@ import Container from '@/components/container'
 import Intro from '@/components/intro'
 import AccordionUnit from '@/components/accordion'
 import Tabs from '@/components/tabs'
+import Form from '@/components/form'
 
 // data
 import { getAllPagesWithSlug, getPageBySlug } from '@/lib/api';
@@ -80,7 +81,7 @@ export default function Page({ postData }) {
                             }
                     }) : 'LOADING'} 
                 </div> 
-                
+                <Form />
                 <Link href={`/posts`}>
                     <a>Back to Posts Index</a>
                 </Link>
