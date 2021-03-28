@@ -35,9 +35,14 @@ const Nav = () => {
     }
 
     return(
-        <nav className="bg-black relative z-50">
-        <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-16">
-            <div className="relative flex items-center justify-between h-16">
+        <nav className="bg-white relative z-50 sticky top-0">
+        <div className="md:flex max-w-7xl mx-auto px-2 sm:px-6 lg:px-16 justify-between align-center">
+            <h1 class="hidden md:flex mt-5 justify-start font-bold text-xl">
+                <Link href='/'>
+                    Isabel Vaz
+                </Link>
+            </h1> 
+            <div className="relative flex items-center justify-end h-16">
             <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 
                 <button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-expanded="false" onClick={(e) => toggleNav(e)}>
@@ -51,7 +56,9 @@ const Nav = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
                 </button>
+                <h1 class="block md:hidden ml-5 mt-0 justify-start font-bold">Isabel Vaz</h1> 
             </div>
+            
             <div className="flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="hidden sm:block sm:ml-6">
                     <div className="flex space-x-4">
@@ -59,24 +66,23 @@ const Nav = () => {
                             <a className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
                         </Link>
                         <Link href='/about'>
-                            <a className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
+                            <a className="text-gray-600 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
                         </Link>
                         <Link href='/posts'>
-                            <a className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Blog</a>
+                            <a className="text-gray-600 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Blog</a>
                         </Link>
                         <Link href='/test'>
-                            <a className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Test</a>
+                            <a className="text-gray-600 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Videos</a>
                         </Link>
-                            <a onClick={toggleContact} className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
-                    
-                    
-                        <Link href='/'>
+                            <a onClick={toggleContact} className="text-gray-600 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+        
+                        {/* <Link href='/'>
                         {!session ?
-                            <a className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" onClick={() => signIn()}>Sign In</a>
+                            <a className="text-gray-600 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" onClick={() => signIn()}>Sign In</a>
                         :
-                            <a className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" onClick={() => signOut()}>Sign Out</a>
+                            <a className="text-gray-600 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" onClick={() => signOut()}>Sign Out</a>
                         }
-                        </Link>       
+                        </Link>        */}
                     </div>
                 </div>
             </div>
@@ -115,13 +121,13 @@ const Nav = () => {
                         <a className="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
                     </Link>
                     <Link href='/about'>
-                        <a className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About</a>
+                        <a className="text-gray-600 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About</a>
                     </Link>
                     <Link href='/posts'>
-                        <a className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Blog</a>
+                        <a className="text-gray-600 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Blog</a>
                     </Link>
                     <Link href='/work'>
-                        <a className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Work</a>
+                        <a className="text-gray-600 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Work</a>
                     </Link>
                 </motion.ul>
             </div>

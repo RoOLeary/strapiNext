@@ -29,8 +29,6 @@ export default function Page({ postData }) {
     const [ session, loading ] = useSession()
 
 
-    console.log(session);
-   
     return(
         <Layout>
              <Container>

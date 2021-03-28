@@ -43,18 +43,19 @@ export default function Slider() {
 
     return(
         <>
+            
             <div className="slider__wrapper">
                 <div className={`flex__container flex--blue  ${activeIndex == 1 ? `flex--active` : 'animate--start' }`} data-slide="1">
                     <div className="flex__item flex__item--left">
                     <div className="flex__content">
                         <p className="text--sub">One</p>
                         <h1 className="text--big">About</h1>
-                        {/* <p className="text--normal">Piplup is the Water-type Starter Pokémon of the Sinnoh region. It was introduced in Generation IV. Piplup has a strong sense of self-esteem. It seldom accepts food that people give because of its pride.</p> */}
+                         <p className="text--normal">Isabel Vaz was born in Lisbon, Portugal, and started playing the cello by the age of seven. Isabel lived and studied in Lisbon until 2007, the year she moved to The Netherlands. She completed her bachelor and masters degrees at the Conservatory of Amsterdam with Dmitry Ferschtman. During her studies she did two exchange semesters, one in Prague (HAMU) and the other one in New York (Manhattan School of Music).</p> 
                          <Link href={`/about`}>
-                            <a>Checkout a Flex Page</a>
+                            <a>More</a>
                         </Link>
                     </div>
-                    <p className="text__background">Isabel</p>
+                    <p className="text__background">About</p>
                     </div>
                     <div className="flex__item flex__item--right"></div>
                     <img className="pokemon__img" src="https://isabelvaz.com/wp-content/uploads/2020/03/IMG_0900-scaled.jpeg" />
@@ -64,23 +65,23 @@ export default function Slider() {
                     <div className="flex__item flex__item--left">
                     <div className="flex__content">
                         <p className="text--sub">Two</p>
-                        <h1 className="text--big">Lash</h1>
-                        {/* <p className="text--normal">yellow is an Electric-type Pokémon introduced in Generation I. yellow are small, chubby, and incredibly cute mouse-like Pokémon. They are almost completely covered by yellow fur.</p>  */}
+                        <h1 className="text--big">Videos</h1>
+                         <p className="text--normal">Quisque ac leo eget ante fermentum tempus. Phasellus malesuada, mi eu sagittis euismod, est leo scelerisque magna, a euismod sapien nisl vitae sapien.</p>  
                     </div>
-                    <p className="text__background">Hottie</p>
+                    <p className="text__background">Videos</p>
                     </div>
                     <div className="flex__item flex__item--right"></div>
-                    <img className="pokemon__img" src="https://isabelvaz.com/wp-content/uploads/2020/03/IMG_0882-scaled.jpeg" />
+                    <img className="pokemon__img" src="https://isabelvaz.com/wp-content/uploads/2020/03/IMG_0874-scaled.jpeg" />
                 </div>
                 
                 <div className={`flex__container flex--red  ${activeIndex == 3 ? `flex--active` : 'animate--start' }`} data-slide="3">
                     <div className="flex__item flex__item--left">
                     <div className="flex__content">
                         <p className="text--sub">Three</p>
-                        <h1 className="text--big">Playing</h1>
+                        <h1 className="text--big">Photos</h1>
                         {/* <p className="text--normal">red is the Fire/Fighting-type Starter Pokémon of the Hoenn region, introduced in Generation III. red is a large, bipedal, humanoid bird-like Pokémon that resembles a rooster.</p>  */}
                     </div>
-                    <p className="text__background">Cello</p>
+                    <p className="text__background">Photos</p>
                     </div>
                     <div className="flex__item flex__item--right"></div>
                     <img className="pokemon__img" src="https://isabelvaz.com/wp-content/uploads/2020/03/isabel.png" />
