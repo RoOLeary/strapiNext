@@ -12,6 +12,7 @@ import Intro from '@/components/intro'
 import AccordionUnit from '@/components/accordion'
 import Tabs from '@/components/tabs'
 import Form from '@/components/form'
+import Slider from '@/components/slider'
 
 // data
 import { getAllPagesWithSlug, getPageBySlug } from '@/lib/api';
@@ -81,6 +82,7 @@ export default function Page({ postData }) {
                             }
                     }) : 'LOADING'} 
                 </div> 
+                <Slider />
                 <Form />
                 <Link href={`/posts`}>
                     <a>Back to Posts Index</a>

@@ -112,9 +112,16 @@
   margin: 0;
 }
 
+
+.slider__wrapper{
+	position: relative; 
+	height: 100vh;
+}
+
+
 .slider__navi {
 	position: absolute;
-  top: 50vh;
+  top: 85vh;
 	right: 20px;
 	transform: translateY(-50%);
 	-webkit-transform: translateY(-50%);
@@ -237,54 +244,54 @@
 	opacity: 1;
 }
 
-/* Piplup */
+/* Blue */
 
-.flex--piplup .flex__item--left {
+.flex--blue .flex__item--left {
 	background: #3e9fe6;
 	transition: all 0.1s linear 0s;
 }
 
-.flex--piplup .flex__item--right {
+.flex--blue .flex__item--right {
 	background: #d3eaef;
 }
 
-/* Pikachu */
+/* Yellow */
 
-.flex--pikachu .flex__item--left {
+.flex--yellow .flex__item--left {
 	background: #f8d41f;
 }
 
-.flex--pikachu .flex__item--right {
+.flex--yellow .flex__item--right {
 	background: #f4ecc5;
 }
 
 /* Blaziken */
 
-.flex--blaziken .flex__item--left {
+.flex--red .flex__item--left {
 	background: #f64f37;
 }
 
-.flex--blaziken .flex__item--right {
+.flex--red .flex__item--right {
 	background: #ffebcd;
 }
 
-/* Dialga */
+/* DarkBlue */
 
-.flex--dialga .flex__item--left {
+.flex--darkblue .flex__item--left {
 	background: #476089;
 }
 
-.flex--dialga .flex__item--right {
+.flex--darkblue .flex__item--right {
 	background: #ade8f7;
 }
 
 /* Zekrom */
 
-.flex--zekrom .flex__item--left {
+.flex--gray .flex__item--left {
 	background: #424242;
 }
 
-.flex--zekrom .flex__item--right {
+.flex--gray .flex__item--right {
 	background: #a7bcbb;
 }
 

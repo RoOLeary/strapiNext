@@ -14,15 +14,14 @@ export default function Index({ homePageData }) {
     <>
       <Layout>
         <Head>
-          <title>TechSpliff. Home</title>
+          <title>Isabel Vaz | Cello</title>
         </Head>
-        <Container>
-          <Intro title="Ro Quarters"/>
-          
-          <h1>{Title}</h1>
-          <p>{HomePageContent ? HomePageContent : 'Failed to load' }</p>
-          <Slider />
-        </Container>
+        <div>
+        <h1>{Title}</h1>
+        <p>{HomePageContent ? HomePageContent : 'Failed to load' }</p>
+        </div>
+        <Slider />
+       
       </Layout>
     </>
   )
