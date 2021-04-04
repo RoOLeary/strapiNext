@@ -78,8 +78,11 @@ export default function Slider() {
                     <div className="flex__item flex__item--left">
                     <div className="flex__content">
                         <p className="text--sub">Three</p>
-                        <h1 className="text--big">Photos</h1>
+                        <h1 className="text--big">Gallery</h1>
                         {/* <p className="text--normal">red is the Fire/Fighting-type Starter Pokémon of the Hoenn region, introduced in Generation III. red is a large, bipedal, humanoid bird-like Pokémon that resembles a rooster.</p>  */}
+                        <Link href={`/gallery`}>
+                            <a>View Gallery</a>
+                        </Link>
                     </div>
                     <p className="text__background">Photos</p>
                     </div>

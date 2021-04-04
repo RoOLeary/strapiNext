@@ -87,6 +87,7 @@ export default function Page({ postData }) {
                 </Link>
             </main>
         </div>
+       
         </Container>
     </Layout>
     );

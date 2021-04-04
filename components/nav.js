@@ -74,6 +74,9 @@ const Nav = () => {
                         <Link href='/test'>
                             <a className="text-gray-600 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Videos</a>
                         </Link>
+                        <Link href='/gallery'>
+                            <a className="text-gray-600 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Gallery</a>
+                        </Link>
                             <a onClick={toggleContact} className="text-gray-600 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
         
                         {/* <Link href='/'>
@@ -128,6 +131,9 @@ const Nav = () => {
                     </Link>
                     <Link href='/work'>
                         <a className="text-gray-600 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Work</a>
+                    </Link>
+                    <Link href='/gallery'>
+                        <a className="text-gray-600 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Gallery</a>
                     </Link>
                 </motion.ul>
             </div>
