@@ -5,27 +5,18 @@ import dynamic from "next/dynamic";
 import Head from 'next/head';
 import Link from 'next/link';
 import Layout from '@/components/layout'
-import Ballsack from '@/components/ballsack'
 import Contact from '@/components/contact'
 import Container from '@/components/container'
 import Intro from '@/components/intro'
-import AccordionUnit from '@/components/accordion'
-import Tabs from '@/components/tabs'
-import Form from '@/components/form'
-import Slider from '@/components/slider'
+import { motion } from 'framer-motion';
 
 // data
-import { getAllPagesWithSlug, getPageBySlug } from '@/lib/api';
-
 // styles
 
 export default function Gallery({ postData }) {
     
     console.log(postData);
     
-    const blocks = postData ? postData.pages[0].flex_content : null;
-    const title = postData ? postData.pages[0].title : 'Loading'
-    const intro_text = postData ? postData.pages[0].intro_text : 'Loading';
     const [ session, loading ] = useSession()
 
 
@@ -34,13 +25,24 @@ export default function Gallery({ postData }) {
              <Container>
         <div>
             <Head>
-                <title>Technoise. {title}</title>  
+                <title>Isabel Vaz | Cello | Gallery</title>  
                 <link rel='icon' href='/favicon.ico' />
             </Head>
              
-            <Intro title={'Gallery'}/>
+            <Intro title={'Gallery'} />
             <main>
-                <div>
+                <motion.div key={1} initial="pageInitial" animate="pageAnimate" transition={{ duration: .25 }} variants={{
+                    pageInitial: {
+                    opacity: 0,
+                    y: 150,
+                    },
+                    pageAnimate: {
+                    opacity: 1,
+                    y: 0,
+                    },
+                    
+                }}>
+                <div className="mb-28">
                     <svg className="Hero__image-grid anim-hero" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 590.91 632.66">
                         <defs>
                             <clipPath id="heroclip1">
@@ -71,40 +73,37 @@ export default function Gallery({ postData }) {
                             <rect className="hero__swipe-5" x="101" y="406" width="75" height="73" fill="#23d8a0" data-svg-origin="176 442.5" transform="matrix(1,0,0,1,0,0)" style={{ "transform-origin": "0px 0px;"}}></rect>
 
                             <Link href="/" to="/">
-                            <image clip-path="url(#heroclip1)" href="https://s3.eu-west-1.amazonaws.com/clearleft-v5/uploads/hero1.jpg?mtime=20210107055409&amp;focal=none" preserveAspectRatio="xMidYMid slice" x="101" y="51" width="490" height="223"></image>
+                            <image clipPath="url(#heroclip1)" href="https://s3.eu-west-1.amazonaws.com/clearleft-v5/uploads/hero1.jpg?mtime=20210107055409&amp;focal=none" preserveAspectRatio="xMidYMid slice" x="101" y="51" width="490" height="223"></image>
                             </Link>
                             <Link href="/test" to="/test">
-                            <image clip-path="url(#heroclip2)" href="https://s3.eu-west-1.amazonaws.com/clearleft-v5/uploads/hero2.jpg?mtime=20210107055410&amp;focal=none" preserveAspectRatio="xMidYMid slice" x="195" y="293" width="294" height="270"></image>
+                            <image clipPath="url(#heroclip2)" href="https://s3.eu-west-1.amazonaws.com/clearleft-v5/uploads/hero2.jpg?mtime=20210107055410&amp;focal=none" preserveAspectRatio="xMidYMid slice" x="195" y="293" width="294" height="270"></image>
                             </Link>
-                            <image clip-path="url(#heroclip3)" href="https://s3.eu-west-1.amazonaws.com/clearleft-v5/uploads/hero3.jpg?mtime=20210107055411&amp;focal=none" preserveAspectRatio="xMidYMid slice" x="1" y="233" width="176" height="164"></image>
-                            <image clip-path="url(#heroclip4)" href="https://s3.eu-west-1.amazonaws.com/clearleft-v5/uploads/hero4.jpg?mtime=20210107055413&amp;focal=none" preserveAspectRatio="xMidYMid slice" x="99" y="404" width="78" height="76"></image>
-                            <image clip-path="url(#heroclip5)" href="https://s3.eu-west-1.amazonaws.com/clearleft-v5/uploads/hero4.jpg?mtime=20210107055413&amp;focal=none" preserveAspectRatio="xMidYMid slice" x="25" y="490" width="160" height="80"></image>
+                            <image clipPath="url(#heroclip3)" href="https://s3.eu-west-1.amazonaws.com/clearleft-v5/uploads/hero3.jpg?mtime=20210107055411&amp;focal=none" preserveAspectRatio="xMidYMid slice" x="1" y="233" width="176" height="164"></image>
+                            <image clipPath="url(#heroclip4)" href="https://s3.eu-west-1.amazonaws.com/clearleft-v5/uploads/hero4.jpg?mtime=20210107055413&amp;focal=none" preserveAspectRatio="xMidYMid slice" x="99" y="404" width="78" height="76"></image>
+                           
+                            <image clipPath="url(#heroclip5)" href="https://s3.eu-west-1.amazonaws.com/clearleft-v5/uploads/hero4.jpg?mtime=20210107055413&amp;focal=none" preserveAspectRatio="xMidYMid slice" x="25" y="490" width="160" height="80"></image>
                             
                         </g>
                     </svg>
                 </div>
+                </motion.div>
             </main>
-        </div>
+            </div>
         </Container>
+        <div class="relative sm:-mt-12 mt-24 px-24 py-24 flex items-center" style={{ "background": "#a7bcbb" }}>
+            <div class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20" style={{"height": "80px", "transform": "translateZ(0)"}} >
+                <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100" x="0" y="0"><polygon style={{ "fill": "#a7bcbb" }} className="" points="2560 0 2560 100 0 100"></polygon></svg>
+                </div>
+            <div class="hidden md:block w-3/12"></div>
+            <div class="flex-1 relative">
+                <div class="font-serif text-white opacity-75 text-base md:text-xl max-w-2xl leading-loose">
+                    <p>Isabel Vaz was born in Lisbon, Portugal, and started playing the cello by the age of seven. Isabel lived and studied in Lisbon until 2007, the year she moved to The Netherlands. She completed her bachelor and masters degrees at the Conservatory of Amsterdam with Dmitry Ferschtman. During her studies she did two exchange semesters, one in Prague (HAMU) and the other one in New York (Manhattan School of Music).</p>
+                </div>
+                <span class="absolute top-0 left-0 w-4 h-full bg-white opacity-50 -ml-20"></span>
+            </div>
+        </div>
     </Layout>
     );
 }
 
-export async function getStaticProps({ params }) {
-    const data = await getPageBySlug('about')
-  
-    return {
-      props: {
-        postData: data
-      }
-    }
-}
-  
-export async function getStaticPaths() {
-    const allPages = await getAllPagesWithSlug()
-    return {
-      paths: allPages?.map((page) => `/${slug}`) || [],
-      fallback: true,
-    }
-}
   

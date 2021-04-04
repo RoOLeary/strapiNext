@@ -58,7 +58,7 @@ export default function Slider() {
                     <p className="text__background">About</p>
                     </div>
                     <div className="flex__item flex__item--right"></div>
-                    <img className="pokemon__img" src="https://isabelvaz.com/wp-content/uploads/2020/03/IMG_0900-scaled.jpeg" />
+                    <img className="pokemon__img sm:hidden md:block" src="https://isabelvaz.com/wp-content/uploads/2020/03/IMG_0900-scaled.jpeg" />
                 </div>
 
                 <div className={`flex__container flex--yellow ${activeIndex == 2 ? `flex--active` : 'animate--start' }`} data-slide="2">
@@ -71,7 +71,7 @@ export default function Slider() {
                     <p className="text__background">Videos</p>
                     </div>
                     <div className="flex__item flex__item--right"></div>
-                    <img className="pokemon__img" src="https://isabelvaz.com/wp-content/uploads/2020/03/IMG_0874-scaled.jpeg" />
+                    <img className="pokemon__img sm:hidden md:block" src="https://isabelvaz.com/wp-content/uploads/2020/03/IMG_0874-scaled.jpeg" />
                 </div>
                 
                 <div className={`flex__container flex--red  ${activeIndex == 3 ? `flex--active` : 'animate--start' }`} data-slide="3">
@@ -87,7 +87,7 @@ export default function Slider() {
                     <p className="text__background">Photos</p>
                     </div>
                     <div className="flex__item flex__item--right"></div>
-                    <img className="pokemon__img" src="https://isabelvaz.com/wp-content/uploads/2020/03/isabel.png" />
+                    <img className="pokemon__img sm:hidden md:block" src="https://isabelvaz.com/wp-content/uploads/2020/03/isabel.png" />
                 </div>
                 <div className={`flex__container flex--darkblue  ${activeIndex == 4 ? `flex--active` : 'animate--start' }`} data-slide="4">
                     <div className="flex__item flex__item--left">
@@ -100,7 +100,7 @@ export default function Slider() {
                     <p className="text__background">Ride</p>
                     </div>
                     <div className="flex__item flex__item--right"></div>
-                    <img className="pokemon__img" src="https://isabelvaz.com/wp-content/uploads/2020/03/IMG_0694.jpeg" />
+                    <img className="pokemon__img sm:hidden md:block" src="https://isabelvaz.com/wp-content/uploads/2020/03/IMG_0694.jpeg" />
                 </div>
                 <div className={`flex__container flex--gray ${activeIndex == 5 ? `flex--active` : 'animate--start' }`} data-slide="5">
                     <div className="flex__item flex__item--left">
@@ -113,7 +113,7 @@ export default function Slider() {
                     <p className="text__background">Hottie</p>
                     </div>
                     <div className="flex__item flex__item--right"></div>
-                    <img className="pokemon__img" src="https://isabelvaz.com/wp-content/uploads/2020/03/2E8A9134-scaled.jpg" />
+                    <img className="pokemon__img sm:hidden md:block" src="https://isabelvaz.com/wp-content/uploads/2020/03/2E8A9134-scaled.jpg" />
                 </div>
                 </div>
 
