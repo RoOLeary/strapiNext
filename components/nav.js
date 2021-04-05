@@ -83,9 +83,9 @@ const Nav = () => {
                         <Link href='/store'>
                             <a className="text-gray-600 hover:bg-gray-700 hover:text-white block px-3 py-2 text-base font-medium">Store</a>
                         </Link>
-                        <Link href='/posts'>
+                        {/* <Link href='/posts'>
                            <a className={`${router.pathname === '/posts' ? 'bg-gray-900 text-white px-3 py-2 text-sm font-medium ' : 'text-gray-600 hover:bg-gray-700 hover:text-white px-3 py-2 text-sm font-medium'}`}>Posts</a>
-                        </Link>
+                        </Link> */}
                         <a onClick={toggleContact} className="text-gray-600 hover:bg-gray-700 hover:text-white block px-3 py-2 text-base font-mediums">Contact</a>
         
                         {/* <Link href='/'>
@@ -147,9 +147,9 @@ const Nav = () => {
                     <Link href='/contact'>
                         <a className={`${router.pathname === '/contact' ? 'bg-gray-900 text-white block px-3 py-2 text-base font-medium ' : 'text-gray-600 hover:bg-gray-700 hover:text-white block px-3 py-2 text-base font-medium'}`}>Contact</a>
                     </Link>
-                     <Link href='/posts'>
+                     {/* <Link href='/posts'>
                         <a className={`${router.pathname === '/posts' ? 'bg-gray-900 text-white block px-3 py-2 text-base font-medium ' : 'text-gray-600 hover:bg-gray-700 hover:text-white block px-3 py-2 text-base font-medium'}`}>Posts</a>
-                    </Link>
+                    </Link> */}
                 </motion.ul>
             </div>
         </div>

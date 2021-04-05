@@ -111,8 +111,8 @@ export default function Slider() {
                     <div className="flex__content">
                         <p className="text--sub">Five</p>
                         <h1 className="text--big font-serif">Teaching</h1>
-                        <p className="text--normal">Zekrom is a Dragon/Electric-type Legendary Pokémon. It is part of the Tao Trio, along with Reshiram and Kyurem. Zekrom is a large, black draconian Pokémon that seems to share its theme with its counterpart, Reshiram. It has piercing red eyes and
-                        dark gray to black skin that seems to be armor-like.</p> 
+                        {/* <p className="text--normal">Zekrom is a Dragon/Electric-type Legendary Pokémon. It is part of the Tao Trio, along with Reshiram and Kyurem. Zekrom is a large, black draconian Pokémon that seems to share its theme with its counterpart, Reshiram. It has piercing red eyes and
+                        dark gray to black skin that seems to be armor-like.</p>  */}
                     </div>
                     <p className="text__background font-serif">Teaching</p>
                     </div>

@@ -83,9 +83,9 @@ export default function Gallery() {
                             <a onClick={toggleImageModal}>
                                 <image clipPath="url(#heroclip1)" href="https://isabelvaz.com/wp-content/uploads/2020/03/IMG_0898-scaled.jpeg" preserveAspectRatio="xMidYMid slice" x="101" y="51" width="490" height="223"></image>
                             </a>
-                            <Link href="/" to="/">
-                            <image clipPath="url(#heroclip2)" href="https://isabelvaz.com/wp-content/uploads/2020/03/IMG_0882-scaled.jpeg" preserveAspectRatio="xMidYMid slice" x="195" y="293" width="294" height="270"></image>
-                            </Link>
+                            <a onClick={toggleImageModal}>
+                                <image clipPath="url(#heroclip2)" href="https://isabelvaz.com/wp-content/uploads/2020/03/IMG_0882-scaled.jpeg" preserveAspectRatio="xMidYMid slice" x="195" y="293" width="294" height="270"></image>
+                            </a>
                             <a onClick={toggleImageModal}>
                                 <image clipPath="url(#heroclip3)" href="https://isabelvaz.com/wp-content/uploads/2020/03/IMG_0875-683x1024.jpeg" preserveAspectRatio="xMidYMid slice" x="1" y="233" width="176" height="164"></image>
                             </a>
