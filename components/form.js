@@ -9,13 +9,13 @@ export const Form = () => {
     
     return(
         <form onSubmit={handleSubmit(onSubmit)}>
-           
+            <p class="font-serif my-2 text-gray-600">Please note, all fields are required</p>
             <div className="relative w-full mb-3 mt-8">
             <label
                 className="block uppercase text-gray-700 text-xs font-bold mb-2"
                 htmlFor="full-name"
             >
-                Full Name 
+                Full Name *
             </label>
             
             <input 
@@ -31,7 +31,7 @@ export const Form = () => {
                 className="block uppercase text-gray-700 text-xs font-bold mb-2"
                 htmlFor="email"
             >
-                Email
+                Email *
             </label>
             <input
                 type="email"
@@ -48,7 +48,7 @@ export const Form = () => {
                 className="block uppercase text-gray-700 text-xs font-bold mb-2"
                 htmlFor="inquiry_type"
             >
-                Inquiry Type
+                Inquiry Type *
             </label>
              <select name="inquiry_type" style={{ "width": "100%" }} class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white text-sm shadow focus:outline-none focus:shadow-outline w-full" {...register('inquiry_type')} >
                <option>Please Select</option>

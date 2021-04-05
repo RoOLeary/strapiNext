@@ -26,9 +26,9 @@ export default function Contact() {
            
             <div className="w-full h-auto border-black bg-white flex justify-center">
                 <div className="w-full md:w-8/12 pt-6 pb-24 relative flex-col px-8">              
-                    <p className="font-serif text-gray-600 text-base md:text-xl leading-loose">Would you like to get in touch with Isabel? Please complete the form and I will reply to you as soon as possible.</p>
+                    <p className="font-serif text-gray-600 text-base md:text-xl leading-loose">Would you like to get in touch? Please complete the form below, and a we will reply to you as soon as possible.</p>
                     <br />
-                    <p className="font-serif text-gray-600 text-base md:text-xl leading-loose">You can also follow me on Social Media.</p>
+                    <p className="font-serif text-gray-600 text-base md:text-xl leading-loose">You can also follow Isabel on Social Media.</p>
                     <Form />
             </div>
         </div>
