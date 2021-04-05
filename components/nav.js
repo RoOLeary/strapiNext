@@ -27,7 +27,7 @@ const Nav = () => {
     const router = useRouter()
     const asPath = router.asPath; 
 
-    console.log(router);
+    // console.log(router);
 
     const toggleContact = event => {
         event.preventDefault();

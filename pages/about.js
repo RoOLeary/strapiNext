@@ -42,7 +42,7 @@ export default function About({ postData }) {
             <div className="w-full h-auto border-black bg-white flex justify-center">
                 <div className="w-full md:w-8/12 pt-6 pb-24 relative flex-col px-8">              
                     <p className="font-serif text-gray-600 text-base md:text-xl leading-loose">Isabel Vaz was born in Lisbon, Portugal, and started playing the cello by the age of seven. Isabel lived and studied in Lisbon until 2007, the year she moved to The Netherlands. She completed her bachelor and masters degrees at the Conservatory of Amsterdam with Dmitry Ferschtman. During her studies she did two exchange semesters, one in Prague (HAMU) and the other one in New York (Manhattan School of Music).</p>
-                    <span class="hidden md:block absolute top-0 right-0 w-48 h-4 bg-blue-900 -mr-24 mt-56 "></span>
+                    <span className="hidden md:block absolute top-0 right-0 w-48 h-4 bg-blue-900 -mr-24 mt-56 "></span>
                     <div style={{ "height":" 40px"}} aria-hidden="true"></div>
                     <figure className="wp-block-image align-left">
                         <img loading="lazy" width="1024" height="576" src="https://isabelvaz.com/wp-content/uploads/2020/03/IMG_0893.jpeg" sizes="(max-width: 1024px) 100vw, 1024px" />

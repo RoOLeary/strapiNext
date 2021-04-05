@@ -6,6 +6,7 @@ import Intro from '@/components/intro'
 export default function Slider() {
 
     const [activeIndex, setActiveIndex] = useState(1);
+    const [isAutomatic, setIsAutomatic] = useState(1);
 
     const guts = (e) => {
         e.preventDefault();
@@ -31,14 +32,43 @@ export default function Slider() {
         }
     }
 
-    // const weed = () => {
-        
-    //     console.log('number time'); 
-        
+    const autoPlayRef = useRef()
+
+    useEffect(() => {
+        autoPlayRef.current = nextSlide
+    })
+
+    useEffect(() => {
+        const play = () => {
+            autoPlayRef.current()
+        }
+
+        const interval = setInterval(play, 7 * 1000)
+        return () => clearInterval(interval)
+    }, [])
+
+    const nextSlide = () => {
+        if (activeIndex == 5) {
+            setActiveIndex(1)
+        } else {
+            setActiveIndex(activeIndex + 1)
+        }       
+    }
+
+    // const loopSlider = (a) => {
+    //     console.log(a)
+    //     // if(activeIndex >= 5){
+    //     //         let restart = 1;
+    //     //         setActiveIndex(restart);
+    //     // };
+    //     setActiveIndex(a + 1);
     // }
 
     // useEffect(() => {
-    //     weed()
+    //     setInterval(() => {
+    //         loopSlider(1)
+    //     }, 7000)
+        
     // },[activeIndex])
 
     return(

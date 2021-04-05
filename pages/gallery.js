@@ -96,13 +96,13 @@ export default function Gallery() {
                                 <image clipPath="url(#heroclip5)" href="https://isabelvaz.com/wp-content/uploads/2020/03/IMG_0895-scaled.jpeg" preserveAspectRatio="xMidYMid slice" x="25" y="490" width="160" height="80"></image>
                             </a>
                             <a onClick={toggleImageModal}>
-                                <image clip-path="url(#heroclip6)" href="https://isabelvaz.com/wp-content/uploads/2020/03/IMG_0901-scaled.jpeg" preserveAspectRatio="xMidYMid slice" x="500" y="293" width="80" height="80"></image>
+                                <image clipPath="url(#heroclip6)" href="https://isabelvaz.com/wp-content/uploads/2020/03/IMG_0901-scaled.jpeg" preserveAspectRatio="xMidYMid slice" x="500" y="293" width="80" height="80"></image>
                             </a>
                             <a onClick={toggleImageModal}>
-                                <image clip-path="url(#heroclip7)" href="https://isabelvaz.com/wp-content/uploads/2020/03/Screenshot-2020-03-28-at-11.52.26.png" preserveAspectRatio="xMidYMid slice" x="470" y="380" width="80" height="80"></image>
+                                <image clipPath="url(#heroclip7)" href="https://isabelvaz.com/wp-content/uploads/2020/03/Screenshot-2020-03-28-at-11.52.26.png" preserveAspectRatio="xMidYMid slice" x="470" y="380" width="80" height="80"></image>
                             </a>
                              <a onClick={toggleImageModal}>
-                                <image clip-path="url(#heroclip8)" href="https://isabelvaz.com/wp-content/uploads/2020/03/IMG_0481-682x1024.jpeg" preserveAspectRatio="xMidYMid slice" x="500" y="465" width="80" height="80"></image>
+                                <image clipPath="url(#heroclip8)" href="https://isabelvaz.com/wp-content/uploads/2020/03/IMG_0481-682x1024.jpeg" preserveAspectRatio="xMidYMid slice" x="500" y="465" width="80" height="80"></image>
                             </a>
                         </g>
                     </svg>

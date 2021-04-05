@@ -135,12 +135,12 @@
 
 .slider__navi a {
 	display: block;
-	height: 6px;
+	height: 20px;
 	width: 20px;
 	margin: 20px 0;
 	text-indent: -9999px;
 	box-shadow: none;
-	border: none;
+	border-radius: 50%;
 	background: rgba(0,0,0,0.2);
 }
 
