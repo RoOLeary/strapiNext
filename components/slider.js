@@ -6,11 +6,9 @@ import Intro from '@/components/intro'
 export default function Slider() {
 
     const [activeIndex, setActiveIndex] = useState(1);
-    const [isAutomatic, setIsAutomatic] = useState(1);
-
+    
     const guts = (e) => {
         e.preventDefault();
-        
         const wrapper = document.querySelector('.slider__wrapper');
         const current = document.querySelector('.flex--active') ? document.querySelector('.flex--active').getAttribute('data-slide') : 1;
         const next = e.currentTarget.getAttribute('data-slide');
@@ -27,7 +25,9 @@ export default function Slider() {
                 fadeSl.classList.remove('flex--active', 'animate--end');
                 fadeSl.classList.add('animate--start');
             setTimeout(() => {
+                // clearInterval(nextSlide);             
                 setActiveIndex(next);
+
             }, 800)
         }
     }
@@ -42,7 +42,6 @@ export default function Slider() {
         const play = () => {
             autoPlayRef.current()
         }
-
         const interval = setInterval(play, 7 * 1000)
         return () => clearInterval(interval)
     }, [])
@@ -55,21 +54,13 @@ export default function Slider() {
         }       
     }
 
-    // const loopSlider = (a) => {
-    //     console.log(a)
-    //     // if(activeIndex >= 5){
-    //     //         let restart = 1;
-    //     //         setActiveIndex(restart);
-    //     // };
-    //     setActiveIndex(a + 1);
-    // }
-
-    // useEffect(() => {
-    //     setInterval(() => {
-    //         loopSlider(1)
-    //     }, 7000)
-        
-    // },[activeIndex])
+    const prevSlide = () => {
+        if (activeIndex === 0) {
+            setActiveIndex(1)
+        } else{
+            setActiveIndex(activeIndex - 1)
+        }
+    }
 
     return(
         <>
@@ -88,7 +79,7 @@ export default function Slider() {
                     <p className="text__background font-serif">About</p>
                     </div>
                     <div className="flex__item flex__item--right"></div>
-                    <img className="isabel_img hidden md:block" src="https://isabelvaz.com/wp-content/uploads/2020/03/IMG_0900-scaled.jpeg" />
+                    <img className="isabel_img hidden md:block" src="https://isabelvaz.com/wp-content/uploads/2020/03/IMG_0481-682x1024.jpeg" />
                 </div>
 
                 <div className={`flex__container flex--yellow ${activeIndex == 2 ? `flex--active` : 'animate--start' }`} data-slide="2">

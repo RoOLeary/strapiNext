@@ -51,7 +51,7 @@ export default function About({ postData }) {
                     <p className="font-serif text-gray-600 text-base md:text-xl leading-loose">Isabel Vaz was born in Lisbon, Portugal, and started playing the cello by the age of seven. Isabel lived and studied in Lisbon until 2007, the year she moved to The Netherlands. She completed her bachelor and masters degrees at the Conservatory of Amsterdam with Dmitry Ferschtman. During her studies she did two exchange semesters, one in Prague (HAMU) and the other one in New York (Manhattan School of Music).
                     </p>
                     <div style={{ "height":" 40px"}} aria-hidden="true"></div>
-                    <span class="hidden md:block absolute top-2 left-0 w-48 h-4 bg-blue-900 -ml-28 -mt-4"></span>
+                    <span className="hidden md:block absolute top-2 left-0 w-48 h-4 bg-blue-900 -ml-28 -mt-4"></span>
                     <p className="font-serif text-gray-600 text-base md:text-xl leading-loose">Isabel was the cellist of Quartetto Indaco between 2013 and 2015, having performed recitals in several halls and festivals in Italy and all over Europe. The quartet studied under the guidance of Oliver Wille in the string quartet program at the Hannover Hochschule.</p>
                     <br />
                     <figure>
