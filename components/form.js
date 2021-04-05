@@ -9,7 +9,7 @@ export const Form = () => {
     
     return(
         <form onSubmit={handleSubmit(onSubmit)}>
-            <p class="font-serif my-2 text-gray-800">Please note, all fields are required</p>
+            <p className="font-serif my-2 text-gray-800">Please note, all fields are required</p>
             <div className="relative w-full mb-3 mt-8">
             <label
                 className="block text-gray-600 text-xs font-bold mb-2 font-serif"
@@ -50,7 +50,7 @@ export const Form = () => {
             >
                 Inquiry Type *
             </label>
-             <select name="inquiry_type" style={{ "width": "100%" }} class="px-3 py-3 placeholder-gray-400 text-gray-600 bg-white text-sm shadow focus:outline-none focus:shadow-outline w-full" {...register('inquiry_type')} >
+             <select name="inquiry_type" style={{ "width": "100%" }} className="px-3 py-3 placeholder-gray-400 text-gray-600 bg-white text-sm shadow focus:outline-none focus:shadow-outline w-full" {...register('inquiry_type')} >
                <option>Please Select</option>
                <option value="booking">Booking</option>
                <option value="teaching">Lesson Inquiry</option>
