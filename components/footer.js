@@ -40,7 +40,7 @@ export default function Footer() {
                 </svg>
             </a>
 
-            <a href="https://www.youtube.com/" className="flex items-start space-x-4">
+            <a href="https://www.youtube.com/channel/UCeuTiViHuER3trA8AXZXMLA" className="flex items-start space-x-4">
               <svg fill="rgba(239,68,68,1)" class="flex-none text-red-500 w-12 h-12">
                   <rect width="48" height="48" rx="12"></rect>
                   <path d="M36.83 18.556c0-2.285-1.681-4.124-3.758-4.124a184.713 184.713 0 00-8.615-.182h-.914c-2.925 0-5.799.05-8.612.183-2.072 0-3.753 1.848-3.753 4.133A75.6 75.6 0 0011 23.99a78.487 78.487 0 00.173 5.429c0 2.285 1.68 4.139 3.753 4.139 2.955.137 5.987.198 9.07.192 3.087.01 6.11-.054 9.069-.193 2.077 0 3.758-1.853 3.758-4.138.121-1.813.177-3.62.172-5.434a73.982 73.982 0 00-.165-5.428zM21.512 28.97v-9.979l7.363 4.987-7.363 4.992z" fill="#fff" class="text-red-50">
