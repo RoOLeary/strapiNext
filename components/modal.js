@@ -32,9 +32,9 @@ const Modal = () => {
     }
 
     return(
-        <div className="bg-black bg-opacity-75 fixed top-0 left-0 w-full h-full z-50 flex items-center justify-start p-4" style={modalBackground}>
+        <div className="bg-black bg-opacity-75 fixed top-0 left-0 w-full h-full z-50 items-center justify-start p-4" style={modalBackground}>
             <div className="protoModal" style={protoModal}>
-                {image ? <img src={`${image}`} /> : ''}
+                {image ? <img style={{ "width": "25%", "maxWidth": "80%", "margin": "0 auto" }} src={`${image}`} /> : ''}
                 <h2 style={{ fontSize: "4em" }}>{title ? title : 'STUFF JUST FOR NOW'}</h2>
                 <p>{content ? content : ''}</p>
                 <a onClick={() => closeModal()}>Close</a>   

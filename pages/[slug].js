@@ -131,7 +131,7 @@ export default function Page({ postData }) {
                     }) : 'LOADING'} 
                 </div> 
                 <Slider />
-                <Form />
+                
                 <div className="w-full h-auto border-black bg-white flex justify-end">
                     <img src="http://staging.algarvemusicseries.com/wp-content/uploads/2019/11/music.jpeg" className="relative block w-full h-full object-cover -mt-12" />
                     <div className="w-64 bg-gray-800"></div>

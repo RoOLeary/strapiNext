@@ -81,7 +81,7 @@ export default function Gallery() {
                             <rect className="hero__swipe-5" x="101" y="406" width="75" height="73" fill="#23d8a0" data-svg-origin="176 442.5" transform="matrix(1,0,0,1,0,0)" style={{ "transformOrigin": "0px 0px"}}></rect>
 
                             <a onClick={toggleImageModal}>
-                                <image clipPath="url(#heroclip1)" href="https://isabelvaz.com/wp-content/uploads/2020/03/IMG_0898-scaled.jpeg" preserveAspectRatio="xMidYMid slice" x="101" y="51" width="490" height="223"></image>
+                                <image clipPath="url(#heroclip1)" href="https://isabelvaz.com/wp-content/uploads/2020/03/IMG_0893.jpeg" preserveAspectRatio="xMidYMid slice" x="101" y="51" width="490" height="223"></image>
                             </a>
                             <a onClick={toggleImageModal}>
                                 <image clipPath="url(#heroclip2)" href="https://isabelvaz.com/wp-content/uploads/2020/03/IMG_0882-scaled.jpeg" preserveAspectRatio="xMidYMid slice" x="195" y="293" width="294" height="270"></image>
@@ -94,6 +94,15 @@ export default function Gallery() {
                             </a>
                             <a onClick={toggleImageModal}>
                                 <image clipPath="url(#heroclip5)" href="https://isabelvaz.com/wp-content/uploads/2020/03/IMG_0895-scaled.jpeg" preserveAspectRatio="xMidYMid slice" x="25" y="490" width="160" height="80"></image>
+                            </a>
+                            <a onClick={toggleImageModal}>
+                                <image clip-path="url(#heroclip6)" href="https://isabelvaz.com/wp-content/uploads/2020/03/IMG_0901-scaled.jpeg" preserveAspectRatio="xMidYMid slice" x="500" y="293" width="80" height="80"></image>
+                            </a>
+                            <a onClick={toggleImageModal}>
+                                <image clip-path="url(#heroclip7)" href="https://isabelvaz.com/wp-content/uploads/2020/03/Screenshot-2020-03-28-at-11.52.26.png" preserveAspectRatio="xMidYMid slice" x="470" y="380" width="80" height="80"></image>
+                            </a>
+                             <a onClick={toggleImageModal}>
+                                <image clip-path="url(#heroclip8)" href="https://isabelvaz.com/wp-content/uploads/2020/03/IMG_0481-682x1024.jpeg" preserveAspectRatio="xMidYMid slice" x="500" y="465" width="80" height="80"></image>
                             </a>
                         </g>
                     </svg>
