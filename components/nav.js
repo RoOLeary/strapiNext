@@ -42,7 +42,7 @@ const Nav = () => {
     return(
         <nav className="bg-white relative z-50 sticky top-0 shadow-lg">
         <div className="md:flex max-w-7xl mx-auto px-2 sm:px-6 lg:px-16 justify-between align-center">
-            <h1 className="hidden md:flex mt-5 justify-start font-bold text-xl font-serif text-gray-800">
+            <h1 className="hidden md:flex ml-2 mt-5 justify-start font-bold text-xl font-serif text-gray-800">
                 <Link href='/'>
                     Isabel Vaz
                 </Link>

@@ -22,7 +22,7 @@ export default function Contact() {
                 <title>Isabel Vaz | Cello | Contact Isabel</title>  
                 <link rel='icon' href='/favicon.ico' />
             </Head>
-            <Intro title={'Contact Isabel'} />
+            <Intro title={'Contact'} />
            
             <div className="w-full h-auto border-black bg-white flex justify-center">
                 <div className="w-full md:w-8/12 pt-6 pb-24 relative flex-col px-8">              
