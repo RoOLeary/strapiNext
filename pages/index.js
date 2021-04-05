@@ -19,10 +19,10 @@ export default function Index({ homePageData }) {
         <div className="-mt-24 pt-24 w-full h-screen bg-white flex flex-wrap">
 			    <div className="px-12 md:-px-0 w-full md:w-4/12 flex items-center justify-start md:justify-end" style={{ 'background': '#ffffff' }}>
             <div className="shadow-none pl-12 py-12 md:pl-0 sm:absolute md:relative z-10 intro ml-4">
-              <h1 className="text-6xl md:text-8xl font-bold tracking-tight leading-tight md:pr-8 container mx-auto text-gray-800 font-serif">
+              <h1 className="text-6xl md:text-8xl font-bold tracking-tighter leading-tight md:pr-8 container mx-auto text-gray-800 font-serif">
                 Isabel Vaz
               </h1>
-              <h2 className="hidden md:block text-lg -mt-4 md:text-2xl font-serif text-gray-800 text-right">Cellist</h2>
+              <h2 className="text-lg sm:-mt-1 md:-mt-4 md:text-2xl font-serif text-gray-800 text-right">Cellist</h2>
               <span className="hidden md:block absolute top-0 right-0 w-48 h-4 bg-blue-900 -mr-24 mt-56 "></span>
             </div>
           </div>
