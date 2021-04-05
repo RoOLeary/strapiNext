@@ -13,7 +13,7 @@ import { useAppContext } from '../src/context/appcontext'
 // data
 // styles
 
-export default function Gallery() {
+export default function Videos() {
     const [ session, loading ] = useSession()
     const ctx = useAppContext();
   
@@ -33,11 +33,11 @@ export default function Gallery() {
              <Container>
         <div>
             <Head>
-                <title>Isabel Vaz | Cello | Gallery</title>  
+                <title>Isabel Vaz | Cello | Videos</title>  
                 <link rel='icon' href='/favicon.ico' />
             </Head>
              
-            <Intro title={'Gallery'} />
+            <Intro title={'Videos'} />
             <main>
                 <motion.div key={1} initial="pageInitial" animate="pageAnimate" transition={{ duration: .25 }} variants={{
                     pageInitial: {
@@ -81,20 +81,18 @@ export default function Gallery() {
                             <rect className="hero__swipe-5" x="101" y="406" width="75" height="73" fill="#23d8a0" data-svg-origin="176 442.5" transform="matrix(1,0,0,1,0,0)" style={{ "transformOrigin": "0px 0px"}}></rect>
 
                             <a onClick={toggleImageModal}>
-                                <image clipPath="url(#heroclip1)" href="https://isabelvaz.com/wp-content/uploads/2020/03/IMG_0898-scaled.jpeg" preserveAspectRatio="xMidYMid slice" x="101" y="51" width="490" height="223"></image>
+                                <image clipPath="url(#heroclip1)" href="https://s3.eu-west-1.amazonaws.com/clearleft-v5/uploads/hero1.jpg?mtime=20210107055409&amp;focal=none" preserveAspectRatio="xMidYMid slice" x="101" y="51" width="490" height="223"></image>
                             </a>
                             <Link href="/" to="/">
-                            <image clipPath="url(#heroclip2)" href="https://isabelvaz.com/wp-content/uploads/2020/03/IMG_0882-scaled.jpeg" preserveAspectRatio="xMidYMid slice" x="195" y="293" width="294" height="270"></image>
+                            <image clipPath="url(#heroclip2)" href="https://s3.eu-west-1.amazonaws.com/clearleft-v5/uploads/hero2.jpg?mtime=20210107055410&amp;focal=none" preserveAspectRatio="xMidYMid slice" x="195" y="293" width="294" height="270"></image>
                             </Link>
                             <a onClick={toggleImageModal}>
-                                <image clipPath="url(#heroclip3)" href="https://isabelvaz.com/wp-content/uploads/2020/03/IMG_0875-683x1024.jpeg" preserveAspectRatio="xMidYMid slice" x="1" y="233" width="176" height="164"></image>
+                                <image clipPath="url(#heroclip3)" href="https://s3.eu-west-1.amazonaws.com/clearleft-v5/uploads/hero3.jpg?mtime=20210107055411&amp;focal=none" preserveAspectRatio="xMidYMid slice" x="1" y="233" width="176" height="164"></image>
                             </a>
-                            <a onClick={toggleImageModal}>
-                                <image clipPath="url(#heroclip4)" href="https://isabelvaz.com/wp-content/uploads/2020/03/isabel-vasco.png" preserveAspectRatio="xMidYMid slice" x="99" y="404" width="78" height="76"></image>
-                            </a>
-                            <a onClick={toggleImageModal}>
-                                <image clipPath="url(#heroclip5)" href="https://isabelvaz.com/wp-content/uploads/2020/03/IMG_0895-scaled.jpeg" preserveAspectRatio="xMidYMid slice" x="25" y="490" width="160" height="80"></image>
-                            </a>
+                            <image clipPath="url(#heroclip4)" href="https://s3.eu-west-1.amazonaws.com/clearleft-v5/uploads/hero4.jpg?mtime=20210107055413&amp;focal=none" preserveAspectRatio="xMidYMid slice" x="99" y="404" width="78" height="76"></image>
+                           
+                            <image clipPath="url(#heroclip5)" href="https://s3.eu-west-1.amazonaws.com/clearleft-v5/uploads/hero4.jpg?mtime=20210107055413&amp;focal=none" preserveAspectRatio="xMidYMid slice" x="25" y="490" width="160" height="80"></image>
+                            
                         </g>
                     </svg>
                 </div>
