@@ -19,7 +19,7 @@ export default function Contact() {
              <Container>
         <div>
             <Head>
-                <title>Isabel Vaz | Cello | Contact Isabel</title>  
+                <title>Isabel Vaz | Cello | Contact</title>  
                 <link rel='icon' href='/favicon.ico' />
             </Head>
             <Intro title={'Contact'} />

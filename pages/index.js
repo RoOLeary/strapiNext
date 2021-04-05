@@ -14,7 +14,7 @@ export default function Index({ homePageData }) {
     <>
       <Layout>
         <Head>
-          <title>Isabel Vaz | Cello</title>
+          <title>Isabel Vaz | Cellist</title>
         </Head>
         <div className="-mt-24 pt-24 w-full h-screen bg-white flex flex-wrap">
 			    <div className="px-12 md:-px-0 w-full md:w-4/12 flex items-center justify-start md:justify-end" style={{ 'background': '#ffffff' }}>

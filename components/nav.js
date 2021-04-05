@@ -61,30 +61,30 @@ const Nav = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
                 </button>
-                <h1 className="block md:hidden ml-5 mt-0 justify-start font-bold font-serif text-gray-800">Isabel Vaz</h1> 
+                <h1 className="block md:hidden ml-2 mt-0 justify-start font-bold font-serif text-gray-800">Isabel Vaz</h1> 
             </div>
             
             <div className="flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="hidden sm:block sm:ml-6">
                     <div className="flex space-x-4">
                         <Link href='/'>
-                            <a className={`${router.pathname === '/' ? 'bg-gray-900 text-white px-3 py-2 text-sm font-medium ' : 'text-gray-600 hover:bg-gray-700 hover:text-white px-3 py-2 text-sm font-medium'}`}>Home</a>
+                            <a className={`${router.pathname === '/' ? 'bg-gray-800 text-white px-3 py-2 text-sm font-medium ' : 'text-gray-600 hover:bg-gray-700 hover:text-white px-3 py-2 text-sm font-medium'}`}>Home</a>
                         </Link>
                         <Link href='/about'>
-                            <a className={`${router.asPath === '/about' ? 'bg-gray-900 text-white px-3 py-2 text-sm font-medium ' : 'text-gray-600 hover:bg-gray-700 hover:text-white px-3 py-2 text-sm font-medium'}`}>About</a>
+                            <a className={`${router.asPath === '/about' ? 'bg-gray-800 text-white px-3 py-2 text-sm font-medium ' : 'text-gray-600 hover:bg-gray-700 hover:text-white px-3 py-2 text-sm font-medium'}`}>About</a>
                         </Link>
                        
                         <Link href='/gallery'>
-                            <a className={`${router.pathname === '/gallery' ? 'bg-gray-900 text-white px-3 py-2 text-sm font-medium ' : 'text-gray-600 hover:bg-gray-700 hover:text-white px-3 py-2 text-sm font-medium'}`}>Gallery</a>
+                            <a className={`${router.pathname === '/gallery' ? 'bg-gray-800 text-white px-3 py-2 text-sm font-medium ' : 'text-gray-600 hover:bg-gray-700 hover:text-white px-3 py-2 text-sm font-medium'}`}>Gallery</a>
                         </Link>
                         <Link href='/videos'>
-                            <a className={`${router.pathname === '/videos' ? 'bg-gray-900 text-white px-3 py-2 text-sm font-medium ' : 'text-gray-600 hover:bg-gray-700 hover:text-white px-3 py-2 text-sm font-medium'}`}>Videos</a>
+                            <a className={`${router.pathname === '/videos' ? 'bg-gray-800 text-white px-3 py-2 text-sm font-medium ' : 'text-gray-600 hover:bg-gray-700 hover:text-white px-3 py-2 text-sm font-medium'}`}>Videos</a>
                         </Link>
                         <Link href='/store'>
                             <a className="text-gray-600 hover:bg-gray-700 hover:text-white block px-3 py-2 text-base font-medium">Store</a>
                         </Link>
                          <Link href='/contact'>
-                           <a className={`${router.pathname === '/contact' ? 'bg-gray-900 text-white px-3 py-2 text-sm font-medium ' : 'text-gray-600 hover:bg-gray-700 hover:text-white px-3 py-2 text-sm font-medium'}`}>Contact</a>
+                           <a className={`${router.pathname === '/contact' ? 'bg-gray-800 text-white px-3 py-2 text-sm font-medium ' : 'text-gray-600 hover:bg-gray-700 hover:text-white px-3 py-2 text-sm font-medium'}`}>Contact</a>
                         </Link> 
                         {/* <a onClick={toggleContact} className="text-gray-600 hover:bg-gray-700 hover:text-white block px-3 py-2 text-base font-mediums">Contact</a>
          */}
@@ -130,25 +130,25 @@ const Nav = () => {
             <div className="px-2 pt-2 pb-3 space-y-1">
                 <motion.ul animate={showNav ? "open" : "closed"} variants={variants} exit={toggleNav}>
                     <Link href='/'>
-                        <a className={`${router.pathname === '/' ? 'bg-gray-900 text-white block px-3 py-2 text-base font-medium ' : 'text-gray-600 hover:bg-gray-700 hover:text-white block px-3 py-2 text-base font-medium'}`}>Home</a>
+                        <a className={`${router.pathname === '/' ? 'bg-gray-800 text-white block px-3 py-2 text-base font-medium ' : 'text-gray-600 hover:bg-gray-700 hover:text-white block px-3 py-2 text-base font-medium'}`}>Home</a>
                     </Link>
                     <Link href='/about'>
-                        <a className={`${router.pathname === '/about' ? 'bg-gray-900 text-white block px-3 py-2 text-base font-medium ' : 'text-gray-600 hover:bg-gray-700 hover:text-white block px-3 py-2 text-base font-medium'}`}>About</a>
+                        <a className={`${router.pathname === '/about' ? 'bg-gray-800 text-white block px-3 py-2 text-base font-medium ' : 'text-gray-600 hover:bg-gray-700 hover:text-white block px-3 py-2 text-base font-medium'}`}>About</a>
                     </Link>
                     <Link href='/videos'>
-                        <a className={`${router.pathname === '/videos' ? 'bg-gray-900 text-white block px-3 py-2 text-base font-medium ' : 'text-gray-600 hover:bg-gray-700 hover:text-white block px-3 py-2 text-base font-medium'}`}>Videos</a>
+                        <a className={`${router.pathname === '/videos' ? 'bg-gray-800 text-white block px-3 py-2 text-base font-medium ' : 'text-gray-600 hover:bg-gray-700 hover:text-white block px-3 py-2 text-base font-medium'}`}>Videos</a>
                     </Link>
                     <Link href='/gallery'>
-                        <a className={`${router.pathname === '/gallery' ? 'bg-gray-900 text-white block px-3 py-2 text-base font-medium ' : 'text-gray-600 hover:bg-gray-700 hover:text-white block px-3 py-2 text-base font-medium'}`}>Gallery</a>
+                        <a className={`${router.pathname === '/gallery' ? 'bg-gray-800 text-white block px-3 py-2 text-base font-medium ' : 'text-gray-600 hover:bg-gray-700 hover:text-white block px-3 py-2 text-base font-medium'}`}>Gallery</a>
                     </Link>
                     <Link href='/store'>
-                       <a className={`${router.pathname === '/store' ? 'bg-gray-900 text-white block px-3 py-2 text-base font-medium ' : 'text-gray-600 hover:bg-gray-700 hover:text-white block px-3 py-2 text-base font-medium'}`}>Store</a>
+                       <a className={`${router.pathname === '/store' ? 'bg-gray-800 text-white block px-3 py-2 text-base font-medium ' : 'text-gray-600 hover:bg-gray-700 hover:text-white block px-3 py-2 text-base font-medium'}`}>Store</a>
                     </Link>
                     <Link href='/contact'>
-                        <a className={`${router.pathname === '/contact' ? 'bg-gray-900 text-white block px-3 py-2 text-base font-medium ' : 'text-gray-600 hover:bg-gray-700 hover:text-white block px-3 py-2 text-base font-medium'}`}>Contact</a>
+                        <a className={`${router.pathname === '/contact' ? 'bg-gray-800 text-white block px-3 py-2 text-base font-medium ' : 'text-gray-600 hover:bg-gray-700 hover:text-white block px-3 py-2 text-base font-medium'}`}>Contact</a>
                     </Link>
                      {/* <Link href='/posts'>
-                        <a className={`${router.pathname === '/posts' ? 'bg-gray-900 text-white block px-3 py-2 text-base font-medium ' : 'text-gray-600 hover:bg-gray-700 hover:text-white block px-3 py-2 text-base font-medium'}`}>Posts</a>
+                        <a className={`${router.pathname === '/posts' ? 'bg-gray-800 text-white block px-3 py-2 text-base font-medium ' : 'text-gray-600 hover:bg-gray-700 hover:text-white block px-3 py-2 text-base font-medium'}`}>Posts</a>
                     </Link> */}
                 </motion.ul>
             </div>

@@ -9,10 +9,10 @@ export const Form = () => {
     
     return(
         <form onSubmit={handleSubmit(onSubmit)}>
-            <p class="font-serif my-2 text-gray-600">Please note, all fields are required</p>
+            <p class="font-serif my-2 text-gray-800">Please note, all fields are required</p>
             <div className="relative w-full mb-3 mt-8">
             <label
-                className="block uppercase text-gray-700 text-xs font-bold mb-2"
+                className="block text-gray-600 text-xs font-bold mb-2 font-serif"
                 htmlFor="full-name"
             >
                 Full Name *
@@ -20,7 +20,7 @@ export const Form = () => {
             
             <input 
                 name="fullname" 
-                className="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white text-sm shadow focus:outline-none focus:shadow-outline w-full"
+                className="px-3 py-3 placeholder-gray-400 text-gray-600 bg-white text-sm shadow focus:outline-none focus:shadow-outline w-full"
                 placeholder="Full Name"
                 {...register('fullname', { required: true, maxLength: 30 })}  
                 style={{ transition: "all .15s ease" }}/>
@@ -28,7 +28,7 @@ export const Form = () => {
 
             <div className="relative w-full mb-3">
             <label
-                className="block uppercase text-gray-700 text-xs font-bold mb-2"
+                className="block text-gray-600 text-xs font-bold mb-2 font-serifs"
                 htmlFor="email"
             >
                 Email *
@@ -36,7 +36,7 @@ export const Form = () => {
             <input
                 type="email"
                 name="email" 
-                className="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white text-sm shadow focus:outline-none focus:shadow-outline w-full"
+                className="px-3 py-3 placeholder-gray-400 text-gray-600 bg-white text-sm shadow focus:outline-none focus:shadow-outline w-full"
                 placeholder="Enter Your Email Address"
                 {...register('email')} 
                 style={{ transition: "all .15s ease" }}
@@ -45,12 +45,12 @@ export const Form = () => {
 
             <div className="relative w-full mt-2 mb-3">
             <label
-                className="block uppercase text-gray-700 text-xs font-bold mb-2"
+                className="block text-gray-600 text-xs font-bold mb-2 font-serif"
                 htmlFor="inquiry_type"
             >
                 Inquiry Type *
             </label>
-             <select name="inquiry_type" style={{ "width": "100%" }} class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white text-sm shadow focus:outline-none focus:shadow-outline w-full" {...register('inquiry_type')} >
+             <select name="inquiry_type" style={{ "width": "100%" }} class="px-3 py-3 placeholder-gray-400 text-gray-600 bg-white text-sm shadow focus:outline-none focus:shadow-outline w-full" {...register('inquiry_type')} >
                <option>Please Select</option>
                <option value="booking">Booking</option>
                <option value="teaching">Lesson Inquiry</option>
@@ -60,22 +60,22 @@ export const Form = () => {
 
             <div className="relative w-full mb-3">
             <label
-                className="block uppercase text-gray-700 text-xs font-bold mb-2"
+                className="block text-gray-600 text-xs font-bold mb-2 font-serif"
                 htmlFor="message"
             >
-                Message
+                Message *
             </label>
             <textarea
                 rows="4"
                 cols="80"
-                className="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white text-sm shadow focus:outline-none focus:shadow-outline w-full"
+                className="px-3 py-3 placeholder-gray-400 text-gray-600 bg-white text-sm shadow focus:outline-none focus:shadow-outline w-full"
                 placeholder="Type a message..."
                 name="message" 
                 {...register('message')}  
             />
             </div>
             <div className="text-center mt-6">
-                <input className="bg-gray-900 text-white active:bg-gray-700 text-sm font-bold uppercase px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1" type="submit" />
+                <input className="bg-gray-800 text-white active:bg-gray-700 text-sm font-bold uppercase px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1" type="submit" />
             </div>
         </form>
     
