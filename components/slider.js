@@ -10,31 +10,36 @@ let initialState = {
 }
 
 export default function Slider() {
+    
+    const elementRef = useRef();
+    const slideRef = useRef();
+    const divElement = elementRef.current;
 
     const [activeSlide, setActiveSlide] = useState(initialState.activeSlide);
     const [isAutoPlay, setAutoPlay] = useState(initialState.isAutoPlay);
-   
-       const guts = (e) => {
+
+    const transitionSlide = (e) => {
         e.preventDefault();
         let wrapper,
             current, 
             currentSlide, 
             clickToSlide, 
             fadeSl, 
+            assignActive,
             oldActive;
 
-            wrapper = document.querySelector('.slider__wrapper');
+            wrapper = divElement;
             currentSlide = document.querySelector('.flex--active');
             current = document.querySelector('.flex--active') ? document.querySelector('.flex--active').getAttribute('data-slide') : initialState.defaultActive;  
-            clickToSlide = e.target.getAttribute('data-slide');
+            clickToSlide = e.currentTarget.getAttribute('data-slide');
 
-            const fallbackSlide = document.querySelector('.flex--active').getAttribute('data-slide');
-            const assignActive = clickToSlide ? clickToSlide : fallbackSlide;
+            assignActive = clickToSlide ? clickToSlide : current;
            
             fadeSl = wrapper.querySelector('.flex__container[data-slide="' + assignActive + '"]');
-            fadeSl.classList.add('flex--preStart')
             oldActive = wrapper.querySelector('.flex__container[data-slide="' + current + '"]');
-
+            if(!fadeSl.classList.contains('flex--preStart')){
+                fadeSl.classList.add('flex--preStart')
+            }
            
 
         if (current === assignActive) {
@@ -45,23 +50,34 @@ export default function Slider() {
             fadeSl.classList.add('animate--start');
             setTimeout(() => {
                 setActiveSlide(assignActive);
-            }, 800)
+            }, 900)
         }   
     }
 
     useEffect(() => {
-        
+        const divElement = elementRef.current;
+        const current = document.querySelector('.flex--active') ? document.querySelector('.flex--active').getAttribute('data-slide') : initialState.defaultActive;    
+        const autoFadeSl = divElement.querySelector('.flex__container[data-slide="' + activeSlide + '"]'); 
+        const oldActive = divElement.querySelector('.flex__container[data-slide="' + current + '"]');
+        let nextSlide = activeSlide;
+            
         if(isAutoPlay){
+            
             const interval = setInterval(() => {
-           
-            if (activeSlide == 5) {
-                    setActiveSlide(initialState.defaultActive)                
-                } else {
-                    let nextSlide = activeSlide;
-                    setActiveSlide(++nextSlide)
-                }       
-            }, 7500);
-
+                autoFadeSl.classList.add('flex--preStart');
+                oldActive.classList.add('flex--active', 'animate--end');
+                autoFadeSl.classList.remove('flex--active', 'animate--end');
+                autoFadeSl.classList.add('animate--start');
+            
+                if (activeSlide == 5) {
+                        setActiveSlide(initialState.defaultActive)                
+                    } else {
+                        let nxtSld = ++nextSlide;
+                        setTimeout(() => {
+                            setActiveSlide(nxtSld);
+                        }, 900)
+                    }       
+                }, 7000);
             return () => {
                 clearInterval(interval);
             };
@@ -71,7 +87,7 @@ export default function Slider() {
     return(
         <>
             
-            <div className="slider__wrapper">
+            <div className="slider__wrapper" ref={elementRef}>
                 <div className={`flex__container flex--blue  ${activeSlide == 1 ? `flex--active` : 'animate--start' }`} data-slide="1">
                     <div className="flex__item flex__item--left">
                     <div className="flex__content">
@@ -147,11 +163,11 @@ export default function Slider() {
                 </div>
 
                 <div className="slider__navi">
-                    <a href="#" onClick={(e) => guts(e)} className={`slide-nav ${activeSlide == 1 ? `active` : '' }`} data-slide="1">blue</a>
-                    <a href="#" onClick={(e) => guts(e)} className={`slide-nav ${activeSlide == 2 ? `active` : '' }`} data-slide="2">yellow</a>
-                    <a href="#" onClick={(e) => guts(e)} className={`slide-nav ${activeSlide == 3 ? `active` : '' }`} data-slide="3">red</a>
-                    <a href="#" onClick={(e) => guts(e)} className={`slide-nav ${activeSlide == 4 ? `active` : '' }`} data-slide="4">darkblue</a>
-                    <a href="#" onClick={(e) => guts(e)} className={`slide-nav ${activeSlide == 5 ? `active` : '' }`} data-slide="5">gray</a>
+                    <a href="#" onClick={(e) => transitionSlide(e)} className={`slide-nav ${activeSlide == 1 ? `active` : '' }`} data-slide="1">blue</a>
+                    <a href="#" onClick={(e) => transitionSlide(e)} className={`slide-nav ${activeSlide == 2 ? `active` : '' }`} data-slide="2">yellow</a>
+                    <a href="#" onClick={(e) => transitionSlide(e)} className={`slide-nav ${activeSlide == 3 ? `active` : '' }`} data-slide="3">red</a>
+                    <a href="#" onClick={(e) => transitionSlide(e)} className={`slide-nav ${activeSlide == 4 ? `active` : '' }`} data-slide="4">darkblue</a>
+                    <a href="#" onClick={(e) => transitionSlide(e)} className={`slide-nav ${activeSlide == 5 ? `active` : '' }`} data-slide="5">gray</a>
                 </div>
             </>
         ); 
