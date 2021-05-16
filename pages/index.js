@@ -10,6 +10,8 @@ export default function Index({ homePageData }) {
 
   const { Title, HomePageContent } = homePageData.home;
   
+  console.log(HomePageContent);
+
   return (
     <>
       <Layout>
@@ -37,10 +39,8 @@ export default function Index({ homePageData }) {
           <div className="hidden md:block w-3/12"></div>
           <div className="flex-1 relative">
             <div className="font-serif text-white opacity-75 text-base md:text-xl max-w-2xl leading-loose">
-               <p>Isabel Vaz is a Portuguese musician residing in Amsterdam. <br />
-                She is Cellist at Noord Nederlands Orkest and Artistic Director of the Algarve Music Series. <br />
-              </p>
-              </div>
+               {HomePageContent}
+             </div>
             <span className="absolute top-0 left-0 w-4 h-full bg-white opacity-50 -ml-20"></span>
             </div>
           </div>
