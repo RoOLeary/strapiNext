@@ -3,22 +3,33 @@ import React, { useState, useEffect, useRef } from 'react'
 import Link from 'next/link';
 import Intro from '@/components/intro'
 
+let initialState = {
+    activeSlide: 1,
+    isAutoPlay: true
+}
+
 export default function Slider() {
 
     const defaultActive = 1;
-    let   [activeSlide, setActiveSlide] = useState(1);
-    const [isAutoPlay, setAutoPlay] = useState(true)
+    const [activeSlide, setActiveSlide] = useState(initialState.activeSlide);
+    const [isAutoPlay, setAutoPlay] = useState(initialState.isAutoPlay);
    
        const guts = (e) => {
         e.preventDefault();
-        
-        const wrapper = document.querySelector('.slider__wrapper');
-        const currentSlide = document.querySelector('.flex--active');
-        const current = document.querySelector('.flex--active') ? document.querySelector('.flex--active').getAttribute('data-slide') : defaultActive;  
-        const clickToSlide = e.target.getAttribute('data-slide');
-        const fadeSl = wrapper.querySelector('.flex__container[data-slide="' + clickToSlide + '"]');
-              fadeSl.classList.add('flex--preStart')
-        const oldActive = wrapper.querySelector('.flex__container[data-slide="' + current + '"]');
+        let wrapper,
+            current, 
+            currentSlide, 
+            clickToSlide, 
+            fadeSl, 
+            oldActive;
+
+            wrapper = document.querySelector('.slider__wrapper');
+            currentSlide = document.querySelector('.flex--active');
+            current = document.querySelector('.flex--active') ? document.querySelector('.flex--active').getAttribute('data-slide') : defaultActive;  
+            clickToSlide = e.target.getAttribute('data-slide');
+            fadeSl = wrapper.querySelector('.flex__container[data-slide="' + clickToSlide + '"]');
+            fadeSl.classList.add('flex--preStart')
+            oldActive = wrapper.querySelector('.flex__container[data-slide="' + current + '"]');
 
         if (current === clickToSlide) {
             return false
@@ -28,7 +39,6 @@ export default function Slider() {
             fadeSl.classList.add('animate--start');
             setTimeout(() => {
                 setActiveSlide(clickToSlide);
-
             }, 800)
         }   
     }
@@ -41,9 +51,10 @@ export default function Slider() {
             if (activeSlide == 5) {
                     setActiveSlide(defaultActive)                
                 } else {
-                    setActiveSlide(++activeSlide)
+                    let nextSlide = activeSlide;
+                    setActiveSlide(++nextSlide)
                 }       
-            }, 5000);
+            }, 7500);
 
             return () => {
                 clearInterval(interval);
