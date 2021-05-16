@@ -6,27 +6,44 @@ import Intro from '@/components/intro'
 export default function Slider() {
 
     const defaultActive = 1;
-    let [activeSlide, setActiveSlide] = useState(1);
+    let   [activeSlide, setActiveSlide] = useState(1);
     const [isAutoPlay, setAutoPlay] = useState(true)
    
        const guts = (e) => {
         e.preventDefault();
+        
         const wrapper = document.querySelector('.slider__wrapper');
+        const currentSlide = document.querySelector('.flex--active');
         const current = document.querySelector('.flex--active') ? document.querySelector('.flex--active').getAttribute('data-slide') : defaultActive;  
-        let clickToSlide = e.target.getAttribute('data-slide');
-        setActiveSlide(clickToSlide);
+        const clickToSlide = e.target.getAttribute('data-slide');
+        const fadeSl = wrapper.querySelector('.flex__container[data-slide="' + clickToSlide + '"]');
+              fadeSl.classList.add('flex--preStart')
+        const oldActive = wrapper.querySelector('.flex__container[data-slide="' + current + '"]');
+
+        if (current === clickToSlide) {
+            return false
+        } else {
+            oldActive.classList.add('flex--active', 'animate--end');
+            fadeSl.classList.remove('flex--active', 'animate--end');
+            fadeSl.classList.add('animate--start');
+            setTimeout(() => {
+                setActiveSlide(clickToSlide);
+
+            }, 800)
+        }   
     }
 
     useEffect(() => {
         
         if(isAutoPlay){
             const interval = setInterval(() => {
+           
             if (activeSlide == 5) {
                     setActiveSlide(defaultActive)                
                 } else {
                     setActiveSlide(++activeSlide)
                 }       
-            }, 7500);
+            }, 5000);
 
             return () => {
                 clearInterval(interval);
@@ -122,6 +139,3 @@ export default function Slider() {
             </>
         ); 
 }; 
-
-
-
