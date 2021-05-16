@@ -12,7 +12,6 @@ let initialState = {
 export default function Slider() {
     
     const elementRef = useRef();
-    const slideRef = useRef();
     const divElement = elementRef.current;
 
     const [activeSlide, setActiveSlide] = useState(initialState.activeSlide);
