@@ -205,7 +205,7 @@
 }
 
 .text__background {
-	font-family: 'Poppins', sans-serif;
+	/* font-family: 'Poppins', sans-serif; */
 	position: absolute;
 	left: 72px;
 	bottom: -60px;

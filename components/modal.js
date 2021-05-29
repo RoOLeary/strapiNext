@@ -4,6 +4,7 @@ import { useAppContext } from '../src/context/appcontext'
 const Modal = () => {
 
     const ctx = useAppContext();
+
     let show = ctx[0].state.isModalOpen;
     let { title, content, image } = ctx[0].state.modalData;
     

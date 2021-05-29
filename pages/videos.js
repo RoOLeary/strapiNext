@@ -53,7 +53,7 @@ export default function Videos() {
                 <div className="mb-28">
                     <div className="flex flex-wrap -mx-1 overflow-hidden sm:-mx-1 md:-mx-1 lg:-mx-1 xl:-mx-1">
                         
-                        <div className="w-full md:w-1/3 overflow-hidden sm:my-1 sm:px-1 md:my-1 md:px-1 md:w-1/3 lg:my-1 lg:px-1 lg:w-1/3 xl:my-1 xl:px-1 xl:w-1/3">
+                        <div className="w-full md:w-1/3 overflow-hidden sm:my-2 sm:px-1 md:my-1 md:px-1 md:w-1/3 lg:my-1 lg:px-1 lg:w-1/3 xl:my-1 xl:px-1 xl:w-1/3">
                             <iframe loading="lazy" title="Página Esquecida" width="100%" height="281" src="https://www.youtube.com/embed/V51TgGHTzt0?feature=oembed" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen=""></iframe>
                         </div>
 

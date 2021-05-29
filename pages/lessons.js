@@ -12,21 +12,21 @@ import { useForm } from 'react-hook-form';
 
 // styles
 
-export default function Store() {
+export default function Lessons() {
 
     return(
         <Layout>
              <Container>
         <div>
             <Head>
-                <title>Isabel Vaz | Cello | Store</title>  
+                <title>Isabel Vaz | Cello | Lessons</title>  
                 <link rel='icon' href='/favicon.ico' />
             </Head>
-            <Intro title={'Store'} />
+            <Intro title={'Lessons'} />
            
             <div className="w-full h-auto border-black bg-white flex justify-center">
                 <div className="w-full md:w-8/12 pt-6 pb-24 relative flex-col px-8">              
-                    <p className="font-serif text-gray-600 text-base md:text-xl leading-loose">Store coming soon...</p>
+                    <p className="font-serif text-gray-600 text-base md:text-xl leading-loose">Lessons coming soon...</p>
                 </div>
             </div>
         </div>

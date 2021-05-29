@@ -77,14 +77,19 @@ const Nav = () => {
                         <Link href='/about'>
                             <a className={`${router.asPath === '/about' ? 'bg-gray-800 text-white px-3 py-2 text-sm font-serif ' : 'text-gray-600 hover:bg-gray-700 hover:text-white px-3 py-2 text-sm font-serif'}`}>About</a>
                         </Link>
-                       
+                        <Link href='/schedule'>
+                            <a className={`${router.pathname === '/schedule' ? 'bg-gray-800 text-white px-3 py-2 text-sm font-serif ' : 'text-gray-600 hover:bg-gray-700 hover:text-white px-3 py-2 text-sm font-serif'}`}>Schedule</a>
+                        </Link>
                         <Link href='/gallery'>
                             <a className={`${router.pathname === '/gallery' ? 'bg-gray-800 text-white px-3 py-2 text-sm font-serif ' : 'text-gray-600 hover:bg-gray-700 hover:text-white px-3 py-2 text-sm font-serif'}`}>Gallery</a>
                         </Link>
                         <Link href='/videos'>
                             <a className={`${router.pathname === '/videos' ? 'bg-gray-800 text-white px-3 py-2 text-sm font-serif ' : 'text-gray-600 hover:bg-gray-700 hover:text-white px-3 py-2 text-sm font-serif'}`}>Videos</a>
                         </Link>
-                        <Link href='/store'>
+                        <Link href='/lessons'>
+                            <a className={`${router.pathname === '/lessons' ? 'bg-gray-800 text-white px-3 py-2 text-sm font-serif ' : 'text-gray-600 hover:bg-gray-700 hover:text-white px-3 py-2 text-sm font-serif'}`}>Teaching</a>
+                        </Link>
+                         <Link href='/store'>
                             <a className={`${router.pathname === '/store' ? 'bg-gray-800 text-white px-3 py-2 text-sm font-serif ' : 'text-gray-600 hover:bg-gray-700 hover:text-white px-3 py-2 text-sm font-serif'}`}>Store</a>
                         </Link>
                          <Link href='/contact'>
@@ -140,13 +145,19 @@ const Nav = () => {
                         <a className={`${router.pathname === '/about' ? 'bg-gray-800 text-white block px-3 py-2 text-base font-serif ' : 'text-gray-600 hover:bg-gray-700 hover:text-white block px-3 py-2 text-base font-serif'}`}>About</a>
                     </Link>
                     <Link href='/videos'>
-                        <a className={`${router.pathname === '/videos' ? 'bg-gray-800 text-white block px-3 py-2 text-base font-serif ' : 'text-gray-600 hover:bg-gray-700 hover:text-white block px-3 py-2 text-base font-serif'}`}>Videos</a>
+                        <a className={`${router.pathname === '/videos' ? 'bg-gray-800 text-white block px-3 py-2 text-base font-serif ' : 'text-gray-600 hover:bg-gray-700 hover:text-white block px-3 py-2 text-base font-serif'}`}>Schedule</a>
                     </Link>
                     <Link href='/gallery'>
                         <a className={`${router.pathname === '/gallery' ? 'bg-gray-800 text-white block px-3 py-2 text-base font-serif ' : 'text-gray-600 hover:bg-gray-700 hover:text-white block px-3 py-2 text-base font-serif'}`}>Gallery</a>
                     </Link>
+                    <Link href='/videos'>
+                        <a className={`${router.pathname === '/videos' ? 'bg-gray-800 text-white block px-3 py-2 text-base font-serif ' : 'text-gray-600 hover:bg-gray-700 hover:text-white block px-3 py-2 text-base font-serif'}`}>Videos</a>
+                    </Link>
+                    <Link href='/lessons'>
+                       <a className={`${router.pathname === '/lessons' ? 'bg-gray-800 text-white block px-3 py-2 text-base font-serif ' : 'text-gray-600 hover:bg-gray-700 hover:text-white block px-3 py-2 text-base font-serif'}`}>Teaching</a>
+                    </Link>
                     <Link href='/store'>
-                       <a className={`${router.pathname === '/store' ? 'bg-gray-800 text-white block px-3 py-2 text-base font-serif ' : 'text-gray-600 hover:bg-gray-700 hover:text-white block px-3 py-2 text-base font-serif'}`}>Store</a>
+                        <a className={`${router.pathname === '/store' ? 'bg-gray-800 text-white block px-3 py-2 text-base font-serif ' : 'text-gray-600 hover:bg-gray-700 hover:text-white block px-3 py-2 text-base font-serif'}`}>Store</a>
                     </Link>
                     <Link href='/contact'>
                         <a className={`${router.pathname === '/contact' ? 'bg-gray-800 text-white block px-3 py-2 text-base font-serif ' : 'text-gray-600 hover:bg-gray-700 hover:text-white block px-3 py-2 text-base font-serif'}`}>Contact</a>
