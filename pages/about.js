@@ -93,3 +93,11 @@ export async function getStaticProps({ params }) {
     }
 }
   
+// export async function getStaticPaths() {
+//     const allPages = await getAllPagesWithSlug()
+//     return {
+//       paths: allPages?.map((page) => `/${slug}`) || [],
+//       fallback: false,
+//     }
+// }
+  
