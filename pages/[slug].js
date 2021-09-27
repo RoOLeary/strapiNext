@@ -23,7 +23,7 @@ export default function Page({ postData }) {
     
     console.log(postData);
     
-    const blocks = postData ? postData.pages[0].flex_content : null;
+    // const blocks = postData ? postData.pages[0].flex_content : null;
     const title = postData ? postData.pages[0].title : 'Loading'
     const intro_text = postData ? postData.pages[0].intro_text : 'Loading';
     const [ session, loading ] = useSession()

@@ -8,7 +8,8 @@ import Head from 'next/head'
 
 export default function Index({ homePageData }) {
 
-  const { Title, HomePageContent } = homePageData.home;
+  console.log(homePageData.pageBy.content); 
+  // const { title, slug, content } = homePageData.home;
   
   return (
     <>
@@ -36,9 +37,8 @@ export default function Index({ homePageData }) {
             </div>
           <div className="hidden md:block w-3/12"></div>
           <div className="flex-1 relative">
-            <div className="font-serif text-white opacity-75 text-base md:text-xl max-w-2xl leading-loose">
-               {HomePageContent}
-             </div>
+            <div className="font-serif text-white opacity-75 text-base md:text-xl max-w-2xl leading-loose" dangerouslySetInnerHTML={{ __html: homePageData.pageBy.content }} /> 
+           
             <span className="absolute top-0 left-0 w-4 h-full bg-white opacity-50 -ml-20"></span>
             </div>
           </div>
